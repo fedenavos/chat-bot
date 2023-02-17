@@ -10,6 +10,9 @@
 .chat {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
   overflow: auto;
   border: 1px solid #ccc;
   padding: 1em;
@@ -20,6 +23,8 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+    height: 300px;
+    overflow: auto;
 }
 
 .message {
@@ -41,4 +46,32 @@
     align-self: flex-end;
     text-align: right;
     border-bottom-right-radius: 0;
+}
+
+.formSend {
+    display: flex;
+    align-items: center;
+}
+
+.inputSend {
+    flex: 1;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    outline: none;
+}
+
+.buttonSend {
+    padding: 0.5em 2em;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    outline: none;
 }
