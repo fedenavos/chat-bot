@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  gap: 1em;
+  padding: 1em;
+}
+
+.chat {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #ccc;
+  padding: 1em;
+  border-radius: 20px;
+}
+
+.messagesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.message {
+    padding: 1em;
+    width: 80%;
+    color: white;
+    border-radius: 20px;
+}
+
+.bot {
+    background-color: #007bff;
+    align-self: flex-start;
+    text-align: left;
+    border-bottom-left-radius: 0;
+}
+
+.user {
+    background-color: rgb(100 116 139);
+    align-self: flex-end;
+    text-align: right;
+    border-bottom-right-radius: 0;
+}
