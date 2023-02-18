@@ -48,7 +48,7 @@
 
 .message {
     padding: 1em;
-    width: 80%;
+    max-width: 70%;
     color: white;
     border-radius: 20px;
 }
