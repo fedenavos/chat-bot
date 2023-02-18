@@ -16,12 +16,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${styles.center}`}>
-        {/* <h1 className={styles.title}>
-          Federico Chat-Bot
-        </h1>
-        <p className={styles.description}>
-          AI bot which answers about Federico Navós
-        </p> */}
         <Chat />
       </main>
     </>

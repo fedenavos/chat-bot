@@ -12,18 +12,18 @@ const EXAMPLES = [{"text": "Hola", "label": "intro"}, {"text": "Como estás?", "
 
 const ANSWERS = {
 
-    intro: (<p>Soy Federico Navós. Tengo 22 años. Soy Ingeniero en Sistemas y Desarrollador Fullstack. Tengo 3 años de experiencia como desarrollador, tanto en aplicaciones web como en análisis de datos. Actualmente trabajo en <a href="http://gptrading.com.ar/newweb/" target="_blank" rel="noreferrer">GP Trading</a> como Desarrollador Python.</p>), 
+    intro: (<p>Soy Federico Navós. Tengo 22 años. Soy Ingeniero en Sistemas y Desarrollador Fullstack 💻. Tengo 3 años de experiencia como desarrollador, tanto en aplicaciones web como en análisis de datos. Actualmente trabajo en <a href="http://gptrading.com.ar/newweb/" target="_blank" rel="noreferrer">GP Trading</a> como Desarrollador Python.</p>), 
 
     experience: (
     <>
         <p>Desde 2021 a la actualidad, me encuentro trabajando en GP Trading como Desarrollador Python, haciendo automatización de informes, scraping de datos y desarrollo de estrategias de trading.</p>
         <p>He trabajado en NEORIS como Desarrollador Fullstack, utilizando tecnologías como Angular, entorno .NET y SQL Server. Podés encontrar más información sobre mi carrera <a href="https://drive.google.com/uc?export=download&id=1vdsco5P4G9WOPWEyO2gt2ckJH2zPhdQF">descargando mi CV aquí</a>.</p>
-        <p>También me gusta desarrollar proyectos personales para aprender nuevas tecnologías. Puedes encontrar más información en mi <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> o en <a href="https://federiconavos.netlify.app/" target="_blank" rel="noreferrer">mi página de portfolio</a>.</p>
+        <p>También me gusta desarrollar proyectos personales para aprender nuevas tecnologías. Puedes encontrar más información en mi <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> o en <a href="https://federiconavos.netlify.app/" target="_blank" rel="noreferrer">mi página de portfolio</a> .</p>
     </>),
 
-    newjob: (<p>No estoy activamente buscando trabajo en este momento, pero estoy dispuesto a escuchar cualquier propuesta. Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> o enviarme un <a href="mailto:federiconavos@gmail.com">email</a> y con gusto te responderé.</p>),
+    newjob: (<p>No estoy activamente buscando trabajo en este momento, pero estoy dispuesto a escuchar cualquier propuesta. Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> o enviarme un <a href="mailto:federiconavos@gmail.com">email</a> y con gusto te responderé 🤗.</p>),
 
-    contact: (<p>Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> o enviarme un <a href="mailto:federiconavos@gmail.com">email</a>.</p>),
+    contact: (<p>Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> o enviarme un <a href="mailto:federiconavos@gmail.com">email</a> en cualquier momento 🕑.</p>),
 
     language: (<p>Me manejo muy bien con el inglés, tanto hablado como escrito. Tengo aprobado el First Certificate in English (FCE) con una calificación de 179/190, es decir, que tengo un nivel B2.</p>),
 
@@ -118,7 +118,10 @@ const Chat = () => {
 
     return (
         <div className={styles.container}>
-            <h1>Chat</h1>
+            <h1 className={styles.title}>Chat-Bot</h1>
+            <p className={styles.description}>
+                Bot que responde preguntas sobre Federico Navós, utilizando <a href="https://cohere.ai/" target="_blank" rel="noreferrer">Cohere</a>.
+            </p>
             <div className={styles.chat}>
                 <div ref={container} className={styles.messagesContainer}>
                     {messages.map((message) => (
