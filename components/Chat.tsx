@@ -1,6 +1,11 @@
 import styles from "@/styles/Chat.module.css";
 import { useEffect, useRef, useState } from "react";
 
+// Font Awesome Icons
+import { faAngular, faBitcoin, faGithub, faJsSquare, faLinkedin, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faCode, faDatabase, faDownload } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 type Message = {
     id: string;
@@ -18,6 +23,8 @@ const EXAMPLES = [
     {"text": "Donde trabajas?", "label": "intro"}, 
     {"text": "Cómo te llamas?", "label": "intro"},
     {"text": "Cuál es tu nombre?", "label": "intro"},
+    {"text": "Hablame sobre vos", "label": "unknown"},
+    {"text": "Hablame sobre tu vida", "label": "unknown"},
     // NEW JOB
     {"text": "Tengo una propuesta de trabajo para vos", "label": "newjob"}, 
     {"text": "Te interesa cambiar de trabajo?", "label": "newjob"}, 
@@ -51,6 +58,9 @@ const EXAMPLES = [
     {"text": "¿Cuál es tu salario deseado?", "label": "contact"},
     {"text": "¿Cuál es tu salario esperado?", "label": "contact"},
     {"text": "¿Cuál es tu salario mínimo?", "label": "contact"},
+    {"text": "Y cómo te puedo contactar", "label": "contact"},
+    {"text": "Y cómo te puedo llamar", "label": "contact"},
+    {"text": "Que forma tengo de hablar con vos?", "label": "contact"},
     // EXPERIENCE
     {"text": "Dónde trabajas?", "label": "experience"}, 
     {"text": "Tenes curriculum?", "label": "experience"}, 
@@ -69,21 +79,25 @@ const EXAMPLES = [
     {"text": "¿Cuál es tu mayor logro profesional?", "label": "experience"},
     {"text": "¿Qué tareas has realizado en trabajos anteriores que te hayan gustado especialmente?",  "label": "experience"},
     {"text": "¿Podrías proporcionar un ejemplo de un proyecto en el que hayas trabajado y cómo lo llevaste a cabo?", "label": "experience"},
+    {"text": "Y qué experiencia tenes?", "label": "experience"},
     // LANGUAGE
     {"text": "Sabes inglés?", "label": "language"}, 
     {"text": "Qué idiomas sabés?", "label": "language"},
     {"text": "¿Podrías realizar una conversación básica en inglés?", "label": "language"},
     {"text": "¿Cuál es tu nivel de comprensión en ingles?", "label": "language"},
     {"text": "¿Has tomado algún tipo de curso o certificación en algun idioma?", "label": "language"},
+    {"text": "¿Cuál es tu nivel de inglés?", "label": "language"},
+    {"text": "Y tu ingles?", "label": "language"},
     // EDUCATION
     {"text": "Donde estudiaste?", "label": "education"},
-    {"text": "¿Cuál es su nivel de educación más alto?", "label": "education"},
-    {"text": "¿Cuál es su título más alto?", "label": "education"},
+    {"text": "¿Cuál es su nivel de educación más o?", "label": "education"},
+    {"text": "¿Cuál es su título más o?", "label": "education"},
     {"text": "¿Dónde estudió y cuál fue su especialización?", "label": "education"},
     {"text": "¿Cuáles fueron algunos de sus cursos o asignaturas favoritas y por qué?", "label": "education"},
     {"text": "¿Cómo le ayudaron sus estudios a desarrollar habilidades específicas?", "label": "education"},
     {"text": "¿Obtuvo algún tipo de premio o reconocimiento por su desempeño académico?", "label": "education"},
     {"text": "¿Cómo ha sido su desempeño académico a lo largo de su carrera?", "label": "education"},
+    {"text": "Y tu educación?", "label": "education"},
     // SKILLS
     {"text": "Que tecnologías usas?", "label": "skills"},
     {"text": "Que tecnologías conoces?", "label": "skills"},
@@ -91,6 +105,8 @@ const EXAMPLES = [
     {"text": "Que tecnologías tenes?", "label": "skills"},
     {"text": "Que tecnologías tenes en tu stack?", "label": "skills"},
     {"text": "Que tecnologías tenes en tu stack tecnológico?", "label": "skills"},
+    {"text": "Que tecnologías?", "label": "skills"},
+    {"text": "Y que tecnologías", "label": "skills"},
     // LIFE SKILLS
     {"text": "Que habilidades tenes?", "label": "life_skills"},
     {"text": "Que habilidades tenes fuera de la tecnología?", "label": "life_skills"},
@@ -99,8 +115,16 @@ const EXAMPLES = [
     {"text": "¿Cuáles son algunas de sus fortalezas personales que cree que lo hacen un buen candidato para este trabajo?", "label": "life_skills"},
     {"text": "¿Cómo describiría su capacidad para trabajar en equipo y colaborar con otros?,", "label": "life_skills"},
     {"text": "¿Cómo describiría su capacidad para trabajar bajo presión?", "label": "life_skills"},
+    {"text": "Y tus competencias?", "label": "life_skills"},
+    {"text": "¿Cuáles son algunas de sus fortalezas personales?", "label": "life_skills"},
+    {"text": "¿Cuáles son tus mejores aptitudes?", "label": "life_skills"},
+    {"text": "¿Podrías hablar sobre tus habilidades más destacadas?", "label": "life_skills"},
+    {"text": "¿Cuáles son tus fortalezas?", "label": "life_skills"},
     // HOBBYS
     {"text": "Que haces en tu tiempo libre?", "label": "hobbys"},
+    {"text": "Y tus hobbys?", "label": "hobbys"},
+    {"text": "¿Cuál es su hobby favorito?", "label": "hobbys"},
+    {"text": "Que hobbys tenes", "label": "hobbys"},
     {"text": "¿Cuál es su hobby favorito y por qué le gusta tanto?", "label": "hobbys"},
     {"text": "¿Cómo le ha beneficiado su hobby en su vida personal y profesional?", "label": "hobbys"},
     {"text": "¿Ha aplicado alguna habilidad o conocimiento que ha obtenido de su hobby en su trabajo?", "label": "hobbys"},
@@ -110,7 +134,7 @@ const EXAMPLES = [
     {"text": "¿Tiene algún hobby que demuestre su habilidad para resolver problemas?", "label": "hobbys"},
     {"text": "¿Ha podido enseñar o compartir su hobby con otras personas?", "label": "hobbys"},
     {"text": "¿Cómo ha influenciado su hobby su toma de decisiones y su actitud hacia el trabajo?", "label": "hobbys"},
-    // CHAT", "label": "hobbys"},
+    // CHAT
     {"text": "Cómo hiciste este chat?", "label": "chat"}, 
     {"text": "Como funciona esto?", "label": "chat"}, 
     {"text": "Que usaste para armar esta aplicación?", "label": "chat"}, 
@@ -118,12 +142,19 @@ const EXAMPLES = [
     {"text": "Que usaste para armar este bot?", "label": "chat"},
     {"text": "Que usaste para armar este asistente virtual?", "label": "chat"},
     {"text": "Que usaste para armar este asistente?", "label": "chat"},
+    // INSULTS
+    {"text": "Idiota", "label": "insults"},
+    {"text": "Mentiroso", "label": "insults"},
+    {"text": "Tonto", "label": "insults"},
+    {"text": "Estupido", "label": "insults"},
+    {"text": "Corto de mente", "label": "insults"},
+    {"text": "No servis para nada", "label": "insults"},
+    {"text": "Inutil", "label": "insults"},
+    {"text": "No haces nada", "label": "insults"},
     // UNKNOWN
     {"text": "Tenes perro?", "label": "unknown"}, 
     {"text": "Cuál es tu hobby?", "label": "unknown"}, 
     {"text": "Conoces a chatGPT?", "label": "unknown"}, 
-    {"text": "¿Podrías hablar sobre tus habilidades más destacadas?", "label": "unknown"},
-    {"text": "¿Cuáles son tus fortalezas?", "label": "unknown"},
     {"text": "¿Tienes alguna debilidad que hayas trabajado para mejorar?", "label": "unknown"},
     {"text": "¿Qué logros te enorgullecen más en tu carrera?", "label": "unknown"},
     {"text": "¿Qué tipo de trabajo te resulta más desafiante?", "label": "unknown"},
@@ -145,66 +176,70 @@ const ANSWERS = {
 
     experience: (
     <>
-        <p>Desde 2021 a la actualidad, me encuentro trabajando en GP Trading como Desarrollador Python, haciendo automatización de informes, scraping de datos y desarrollo de estrategias de trading.</p>
+        <p>Desde 2021 a la actualidad, me encuentro trabajando en GP Trading como Desarrollador Python, haciendo automatización de informes, scraping de datos y desarrollo de estrategias de trading 📈.</p>
         <p>He trabajado en NEORIS como Desarrollador Fullstack, utilizando tecnologías como Angular, entorno .NET y SQL Server. Podés encontrar más información sobre mi carrera <a href="https://drive.google.com/uc?export=download&id=1vdsco5P4G9WOPWEyO2gt2ckJH2zPhdQF">descargando mi CV aquí</a>.</p>
-        <p>También me gusta desarrollar proyectos personales para aprender nuevas tecnologías. Puedes encontrar más información en mi <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> o en <a href="https://federiconavos.netlify.app/" target="_blank" rel="noreferrer">mi página de portfolio</a> .</p>
+        <p>También me gusta desarrollar proyectos personales para aprender nuevas tecnologías. Puedes encontrar más información en mi <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon icon={ faGithub } /> o en <a href="https://federiconavos.netlify.app/" target="_blank" rel="noreferrer">mi página de portfolio</a> .</p>
     </>),
 
-    newjob: (<p>No estoy activamente buscando trabajo en este momento, pero estoy dispuesto a escuchar cualquier propuesta. Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> o enviarme un <a href="mailto:federiconavos@gmail.com">email</a> y con gusto te responderé 🤗.</p>),
+    newjob: (<p>No estoy activamente buscando trabajo en este momento, pero estoy dispuesto a escuchar cualquier propuesta. Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon icon={ faLinkedin } /> o enviarme un <a href="mailto:federiconavos@gmail.com">email</a> y con gusto te responderé 🤗.</p>),
 
-    contact: (<p>Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> o enviarme un <a href="mailto:federiconavos@gmail.com">email</a> en cualquier momento 🕑.</p>),
+    contact: (<p>Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon icon={ faLinkedin } /> o enviarme un <a href="mailto:federiconavos@gmail.com">email</a> en cualquier momento 🕑.</p>),
 
     language: (<p>Me manejo muy bien con el inglés, tanto hablado como escrito. Tengo aprobado el First Certificate in English (FCE) con una calificación de 179/190, es decir, que tengo un nivel B2.</p>),
 
     education: (
     <>
-        <p>Estudié en la Universidad Tecnológica Nacional (UTN) de Rosario, donde obtuve el título de Ingeniero en Sistemas el año pasado.Ahi aprendí a modelar y analizar sistemas de información, utilizando herramientas como UML. También realicé cursos de programación que me enseñaron los conceptos básicos del mismo y donde aprendí a desarrollar aplicaciones web con tecnologías como React, .NET y SQL Server.</p>
+        <p>Estudié en la Universidad Tecnológica Nacional (UTN) de Rosario, donde obtuve el título de Ingeniero en Sistemas el año pasado 🎓. Ahi aprendí a modelar y analizar sistemas de información, utilizando herramientas como UML. También realicé cursos de programación que me enseñaron los conceptos básicos del mismo y donde aprendí a desarrollar aplicaciones web con tecnologías como React, .NET y SQL Server.</p>
         <p>Mis estudios en la UTN me dieron una sólida base en el desarrollo de software, pero también me enseñaron a pensar de forma crítica y a resolver problemas de forma eficiente. Esto me permitió desarrollar habilidades como la capacidad de trabajar en equipo, la resolución de problemas y la comunicación efectiva.</p>
-        <p>En cuanto a mis estudios secundarios, realicé mi eduación completa en el Colegio La Salle de Rosario. Allí fui primer escolta de la bandera nacional y obtuve el título de Bachiller en Economía y Administración en el año 2017.</p>
-        <p>Puedes encontrar más información sobre mi carrera <a href="https://drive.google.com/uc?export=download&id=1vdsco5P4G9WOPWEyO2gt2ckJH2zPhdQF">descargando mi CV aquí</a>.</p>
+        <p>En cuanto a mis estudios secundarios, realicé mi eduación completa en el Colegio La Salle de Rosario. Allí fui primer escolta de la bandera nacional y obtuve el título de Bachiller en Economía y Administración en el año 2017. También participé como Coordinador de la Pastoral Juvenil de la escuela durante más de 6 años.</p>
+        <p>Puedes encontrar más información sobre mi carrera <a href="https://drive.google.com/uc?export=download&id=1vdsco5P4G9WOPWEyO2gt2ckJH2zPhdQF">descargando mi CV aquí</a> <FontAwesomeIcon icon={ faDownload } /> .</p>
     </>),
 
     skills: (
-    <>
-        <p>Me considero una persona muy autodidacta, que siempre está buscando aprender nuevas tecnologías. Aquí van algunas de las tecnologías que fui aprendiendo, tanto en la facultad como de forma autodidacta:</p>
+    <div>
+        <p>Soy una persona que siempre está buscando aprender nuevas tecnologías. Aquí van algunas de las tecnologías que fui aprendiendo, tanto en la facultad como de forma autodidacta:</p>
         <ul>
-            <li>Python</li>
-            <li>React/Next JS</li>
-            <li>JavaScript/Typescript</li>
-            <li>Bases de datos SQL</li>
-            <li>Angular</li>
-            <li>.NET</li>
-            <li>Git</li>
+            <li>Python <FontAwesomeIcon icon={ faPython } /></li> 
+            <li>React/Next JS <FontAwesomeIcon icon={ faReact } /></li>
+            <li>JavaScript/Typescript <FontAwesomeIcon icon={ faJsSquare } /></li>
+            <li>Bases de datos SQL <FontAwesomeIcon icon={ faDatabase } /></li>
+            <li>Angular <FontAwesomeIcon icon={ faAngular } /></li>
+            <li>.NET <FontAwesomeIcon icon={ faCode } /></li>
+            <li>Git <FontAwesomeIcon icon={ faGithub } /></li>
         </ul>
         <p>Actualmente me encuentro explorando nuevas tecnologías como programación de Smart Contracts con Solidity y desarrollo mobile con Flutter.</p> 
-    </>),
+    </div>),
 
     life_skills: (
-    <>
+    <div>
         <p>Te cuento un poco cuáles creo que son mis habilidades más importantes. Siempre fui muy responsable en todas mis funciones, tomando la iniciativa y asegurándome de cumplir con mis responsabilidades de manera efectiva.</p>
         <p>Soy una persona muy organizada, que siempre busca la mejor manera de realizar sus tareas. Y esto ayuda también a mi capacidad de trabajo en equipo, ya que siempre estoy dispuesto a ayudar a mis compañeros de trabajo.</p>
         <p>También tengo una gran capacidad de aprendizaje, que me permite adquirir nuevos conocimientos aplicarlos rápidamente en mi trabajo diario. Además, mi habilidad analítica me permiten analizar y resolver problemas complejos de manera efectiva.</p>
-    </>),
+    </div>),
+
+    insults: (
+    <div>
+        <p>¿Por qué me insultás? Ni a mi ni a Federico nos gusta esto 😢</p>
+        <p>No es el objetivo de este chat. Si querés podes hablar con él por <a href="mailto:federiconavos@gmail.com">email</a>.</p>
+    </div>),
 
     hobbys: (
-    <>
-        <p>Soy una persona muy interesada en el mundo de la tecnología, sobre todo en lo que es el mundo <strong>fintech</strong>. Principalmente me considero un experto en todo lo que es criptomonedas. Me interesa la blockchain como tecnología y analizar los proyectos que se están desarrollando en este campo.</p>
-        <p>Me gusta mucho el fútbol. Soy hincha fanático de River Plate y me gusta mucho ver los partidos de mi equipo. También me gustan los videojuegos, es por eso que hice cursos para programación de los mismos.</p>
-    </>
+    <div>
+        <p>Soy una persona muy interesada en el mundo de la tecnología, sobre todo en lo que es el mundo <strong>fintech</strong>. Principalmente me considero un experto en todo lo que es criptomonedas <FontAwesomeIcon icon={ faBitcoin } />. Me interesa la blockchain como tecnología y analizar los proyectos que se están desarrollando en este campo.</p>
+        <p>Me gusta mucho el fútbol ⚽. Soy hincha fanático de River Plate y me gusta mucho ver los partidos de mi equipo. También me gustan los videojuegos 🎮, es por eso que hice cursos para programación de los mismos.</p>
+    </div>
     ),
 
     chat: (
-    <>
+    <div>
         <p>Este chat-bot fue desarrollado con <a href="https://nextjs.org/" target="_blank" rel="noreferrer">Next.js</a> y <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">TypeScript</a> para el front-end.</p>
         <p>Para la clasificación de preguntas utilicé la API de <a href="https://cohere.ai/" target="_blank" rel="noreferrer">Cohere</a>, que brinda herramientas IA gratis para desarrolladores. Entrené el dataset con preguntas y gracias a esto puedo clasificar cada uno de tus mensajes para encontrar la mejor respuesta 🙂.</p>
-        <p>El código fuente lo podés encontrar en <a href="https://github.com/fedenavos/chat-bot" target="_blank" rel="noreferrer">Github</a>.</p>
-    </>),
+        <p>El código fuente lo podés encontrar en <a href="https://github.com/fedenavos/chat-bot" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon icon={ faGithub } />.</p>
+    </div>),
 
     default: (<p>Lo siento, soy una IA un poco limitada 😅 y no entiendo algunas preguntas. Podés preguntarme sobre mi experiencia, mi disponibilidad para trabajar, cómo contactarme, entre otras cosas.</p>),
 
 };
-
-const API_KEY = 'jYKXqYE7lXtSzOjehma8L1LMDlec4d4yU0FNQkL2';
 
 
 const Chat = () => {
@@ -292,7 +327,7 @@ const Chat = () => {
                 <div ref={container} className={styles.messagesContainer}>
                     {messages.map((message) => (
                         <div key={message.id} className={`${styles.message} ${message.type === 'bot' ? styles.bot : styles.user}`}>
-                            <p>{message.text}</p>
+                            {message.text}
                         </div>
                     ))}
                 </div>

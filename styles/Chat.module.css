@@ -51,9 +51,6 @@
     max-width: 70%;
     color: white;
     border-radius: 20px;
-}
-
-.message p {
     margin: 0;
     font-size: 13px;
     font-family: var(--font-mono);
