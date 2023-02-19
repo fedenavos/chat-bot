@@ -2,8 +2,8 @@ import styles from "@/styles/Chat.module.css";
 import { useEffect, useRef, useState } from "react";
 
 // Font Awesome Icons
-import { faAngular, faBitcoin, faGithub, faJsSquare, faLinkedin, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
-import { faCode, faDatabase, faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faAndroid, faAngular, faBitcoin, faCss3Alt, faGithub, faHtml5, faJsSquare, faLinkedin, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faChartLine, faCode, faDatabase, faDownload, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -98,6 +98,22 @@ const EXAMPLES = [
     {"text": "¿Obtuvo algún tipo de premio o reconocimiento por su desempeño académico?", "label": "education"},
     {"text": "¿Cómo ha sido su desempeño académico a lo largo de su carrera?", "label": "education"},
     {"text": "Y tu educación?", "label": "education"},
+    // COURSES
+    {"text": "Que cursos tomaste?", "label": "courses"},
+    {"text": "Que cursos hiciste?", "label": "courses"},
+    {"text": "Que cursos hiciste en la universidad?", "label": "courses"},
+    {"text": "Que cursos hiciste en la facultad?", "label": "courses"},
+    {"text": "Que cursos hiciste en la escuela?", "label": "courses"},
+    {"text": "¿Qué capacitaciones o entrenamientos has recibido?", "label": "courses"},
+    {"text": "¿Qué programas educativos has completado?", "label": "courses"},
+    {"text": "¿Qué talleres o seminarios has asistido?", "label": "courses"},
+    {"text": "¿Qué certificaciones o acreditaciones posees?", "label": "courses"},
+    {"text": "¿Qué estudios complementarios has realizado?", "label": "courses"},
+    {"text": "¿Qué cursos de formación has tomado?", "label": "courses"},
+    {"text": "¿Qué aprendizajes adicionales has adquirido?", "label": "courses"},
+    {"text": "¿Qué programas de desarrollo profesional has cursado?", "label": "courses"},
+    {"text": "¿Qué actividades de aprendizaje continuo has llevado a cabo?", "label": "courses"},
+    {"text": "¿Qué programas de educación ejecutiva has completado?", "label": "courses"},
     // SKILLS
     {"text": "Que tecnologías usas?", "label": "skills"},
     {"text": "Que tecnologías conoces?", "label": "skills"},
@@ -193,6 +209,20 @@ const ANSWERS = {
         <p>Mis estudios en la UTN me dieron una sólida base en el desarrollo de software, pero también me enseñaron a pensar de forma crítica y a resolver problemas de forma eficiente. Esto me permitió desarrollar habilidades como la capacidad de trabajar en equipo, la resolución de problemas y la comunicación efectiva.</p>
         <p>En cuanto a mis estudios secundarios, realicé mi eduación completa en el Colegio La Salle de Rosario. Allí fui primer escolta de la bandera nacional y obtuve el título de Bachiller en Economía y Administración en el año 2017. También participé como Coordinador de la Pastoral Juvenil de la escuela durante más de 6 años.</p>
         <p>Puedes encontrar más información sobre mi carrera <a href="https://drive.google.com/uc?export=download&id=1vdsco5P4G9WOPWEyO2gt2ckJH2zPhdQF">descargando mi CV aquí</a> <FontAwesomeIcon icon={ faDownload } /> .</p>
+    </>),
+
+    courses: (
+    <>
+        <p>Me gusta aprender cosas nuevas y me gusta mucho aprender de forma autodidacta. Aquí van algunos de los cursos que realicé en los últimos años:</p>
+        <ul>
+            <li>Curso de Introducción al Desarrollo Web: HTML y CSS <FontAwesomeIcon icon={ faHtml5 } /> <FontAwesomeIcon icon={ faCss3Alt } /> - Google Actívate</li>
+            <li>Angular: De cero a experto (Legacy) <FontAwesomeIcon icon={ faAngular } /> con Fernando Herrera</li>
+            <li>The Complete 2020 Flutter Development Bootcamp with Dart <FontAwesomeIcon icon={ faAndroid } /> - Udemy, Angela Yu</li>
+            <li>La guía definitiva del desarrollo de videojuegos con Unity <FontAwesomeIcon icon={ faGamepad } /> - Udemy, brindado por Unity</li>
+            <li>Laboratorio .NET <FontAwesomeIcon icon={ faCode } /> - NEORIS</li>
+            <li>Taller de Estrategia de Portafolio de Inversión <FontAwesomeIcon icon={ faChartLine } /> - Clave Bursátil</li>
+            <li>Algo Trading <FontAwesomeIcon icon={ faChartLine } /> - BCR Capacita</li>
+        </ul>   
     </>),
 
     skills: (
