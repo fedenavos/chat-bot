@@ -79,6 +79,26 @@
     border-bottom-right-radius: 0;
 }
 
+/* Apply border to all the table */
+.message table {
+    border: 1px solid white;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.message td {
+    border: 1px solid white;
+    padding: 0.5em;
+}
+
+.message th {
+    border: 1px solid white;
+    padding: 0.5em;
+    background-color: #007bff;
+    color: white;
+}
+
+
 .loading {
     display: flex;
     align-items: center;

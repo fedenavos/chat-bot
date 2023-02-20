@@ -215,15 +215,40 @@ const ANSWERS = {
     courses: (
         <>
             <p>Me gusta aprender cosas nuevas y me gusta mucho aprender de forma autodidacta. Aquí van algunos de los cursos que realicé en los últimos años:</p>
-            <ul>
-                <li>Curso de Introducción al Desarrollo Web: HTML y CSS <FontAwesomeIcon icon={faHtml5} /> <FontAwesomeIcon icon={faCss3Alt} /> - Google Actívate</li>
-                <li>Angular: De cero a experto (Legacy) <FontAwesomeIcon icon={faAngular} /> con Fernando Herrera</li>
-                <li>The Complete 2020 Flutter Development Bootcamp with Dart <FontAwesomeIcon icon={faAndroid} /> - Udemy, Angela Yu</li>
-                <li>La guía definitiva del desarrollo de videojuegos con Unity <FontAwesomeIcon icon={faGamepad} /> - Udemy, brindado por Unity</li>
-                <li>Laboratorio .NET <FontAwesomeIcon icon={faCode} /> - NEORIS</li>
-                <li>Taller de Estrategia de Portafolio de Inversión <FontAwesomeIcon icon={faChartLine} /> - Clave Bursátil</li>
-                <li>Algo Trading <FontAwesomeIcon icon={faChartLine} /> - BCR Capacita</li>
-            </ul>
+            <table>
+                <tr>
+                    <th>Course</th>
+                    <th>Platform</th>
+                </tr>
+                <tr>
+                    <td>Curso de Introducción al Desarrollo Web: HTML y CSS</td>
+                    <td>Google Actívate</td>
+                </tr>
+                <tr>
+                    <td>Angular <FontAwesomeIcon icon={faAngular} />: De cero a experto (Legacy)</td>
+                    <td>Udemy, Fernando Herrera</td>
+                </tr>
+                <tr>
+                    <td>The Complete 2020 Flutter Development Bootcamp with Dart <FontAwesomeIcon icon={faAndroid} /></td>
+                    <td>Udemy, Dr. Angela Yu</td>
+                </tr>
+                <tr>
+                    <td>La guía definitiva del desarrollo de videojuegos con Unity <FontAwesomeIcon icon={faGamepad} /></td>
+                    <td>Udemy, Juan Pablo de la Torre Valdez</td>
+                </tr>
+                <tr>
+                    <td>Laboratorio .NET <FontAwesomeIcon icon={faCode} /></td>
+                    <td>NEORIS</td>
+                </tr>
+                <tr>
+                    <td>Taller de Estrategia de Portafolio de Inversión <FontAwesomeIcon icon={faChartLine} /></td>
+                    <td>Clave Bursátil, con Matias Batista</td>
+                </tr>
+                <tr>
+                    <td>Algo Trading <FontAwesomeIcon icon={faChartLine} /></td>
+                    <td>BCR Capacita</td>
+                </tr>
+            </table>
         </>),
 
     skills: (
@@ -338,11 +363,12 @@ const Chat = () => {
     }
 
     function sendMessages(response: JSX.Element | JSX.Element[]) {
+        const DELAY = 3000;
         if (Array.isArray(response)) {
             const len = response.length;
             setTimeout(() => {
                 setLoading(false);
-            }, (len - 1) * 2500);
+            }, (len - 1) * DELAY);
             for (let i = 0; i < response.length; i++) {
                 setTimeout(() => {
                     setMessages((messages) => messages.concat({
@@ -351,7 +377,7 @@ const Chat = () => {
                         type: "bot",
                     })
                     );
-                }, i * 2500);
+                }, i * DELAY);
             }
         } else {
             setMessages((messages) => messages.concat({
