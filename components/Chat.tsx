@@ -5,11 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import { faAndroid, faAngular, faBitcoin, faCss3Alt, faGithub, faHtml5, faJsSquare, faLinkedin, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
 import { faChartLine, faCode, faDatabase, faDownload, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Message from "./Message";
 
 
 type Message = {
     id: string;
-    text: React.ReactNode | string;
+    content: React.ReactNode | string;
     type: "bot" | "user";
 }
 
@@ -277,10 +278,19 @@ const Chat = () => {
     const [messages, setMessages] = useState<Message[]>([
         {
             id: "1",
-            text: "Hola! Soy un bot preparado para contestar algunas preguntas sobre Federico. Haceme una pregunta!",
+            content: "Hola 👋 Soy un bot preparado para contestar algunas preguntas sobre Federico. Haceme una pregunta!",
             type: "bot"
         },
     ]);
+
+    // const [messages, setMessages] = useState<Message[]>([
+    //     {
+    //         id: "1",
+    //         content: ANSWERS["intro"],
+    //         type: "bot"
+    //     },
+    // ]);
+    
     const [question, setQuestion] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -303,7 +313,7 @@ const Chat = () => {
         setMessages(
             (messages) => messages.concat({
                 id: new Date().getTime().toString(),
-                text: question,
+                content: question,
                 type: "user"
             })
         );
@@ -339,7 +349,7 @@ const Chat = () => {
         setMessages(
             (messages) => messages.concat({
                 id: new Date().getTime().toString(),
-                text: ANSWERS[prediction as keyof typeof ANSWERS] || ANSWERS.default,
+                content: ANSWERS[prediction as keyof typeof ANSWERS] || ANSWERS.default,
                 type: "bot"
             })
         );
@@ -357,7 +367,7 @@ const Chat = () => {
                 <div ref={container} className={styles.messagesContainer}>
                     {messages.map((message) => (
                         <div key={message.id} className={`${styles.message} ${message.type === 'bot' ? styles.bot : styles.user}`}>
-                            {message.text}
+                            { message.type === 'bot' ? <Message content={message.content} /> : message.content  }
                         </div>
                     ))}
                 </div>
