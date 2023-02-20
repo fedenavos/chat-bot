@@ -283,23 +283,13 @@ const Chat = () => {
         },
     ]);
 
-    // const [messages, setMessages] = useState<Message[]>([
-    //     {
-    //         id: "1",
-    //         content: ANSWERS["intro"],
-    //         type: "bot"
-    //     },
-    // ]);
-    
     const [question, setQuestion] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
 
     const container = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (container.current) {
-            container.current.scrollTo(0, container.current.scrollHeight)
-        }
+        container.current?.scrollTo(0, container.current.scrollHeight)
     }, [messages]);
 
     async function handleSubmit(e: React.FormEvent) {
@@ -376,6 +366,7 @@ const Chat = () => {
                         className={styles.inputSend} type="text"
                         placeholder="Hola! Quien eres?"
                         value={question}
+                        disabled={loading}
                         onChange={(e) => setQuestion(e.target.value)}
                     />
                     <button

@@ -22,14 +22,9 @@ export default function Message({ content }: MessageProps) {
       }, 25);
       return () => clearInterval(interval);
     } else {
-        setOutput(content);
+      setOutput(content);
     }
   }, [content]);
 
-  return (
-    <div>
-      {output === "" && <span className="cursor">|</span>}
-      { output }
-    </div>
-  );
+  return <div>{typeof content === "string" ? output : content}</div>;
 }
