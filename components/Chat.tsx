@@ -227,7 +227,7 @@ const ANSWERS = {
     </>),
 
     skills: (
-    <div>
+    <>
         <p>Soy una persona que siempre está buscando aprender nuevas tecnologías. Aquí van algunas de las tecnologías que fui aprendiendo, tanto en la facultad como de forma autodidacta:</p>
         <ul>
             <li>Python <FontAwesomeIcon icon={ faPython } /></li> 
@@ -239,34 +239,34 @@ const ANSWERS = {
             <li>Git <FontAwesomeIcon icon={ faGithub } /></li>
         </ul>
         <p>Actualmente me encuentro explorando nuevas tecnologías como programación de Smart Contracts con Solidity y desarrollo mobile con Flutter.</p> 
-    </div>),
+    </>),
 
     life_skills: (
-    <div>
+    <>
         <p>Te cuento un poco cuáles creo que son mis habilidades más importantes. Siempre fui muy responsable en todas mis funciones, tomando la iniciativa y asegurándome de cumplir con mis responsabilidades de manera efectiva.</p>
         <p>Soy una persona muy organizada, que siempre busca la mejor manera de realizar sus tareas. Y esto ayuda también a mi capacidad de trabajo en equipo, ya que siempre estoy dispuesto a ayudar a mis compañeros de trabajo.</p>
         <p>También tengo una gran capacidad de aprendizaje, que me permite adquirir nuevos conocimientos aplicarlos rápidamente en mi trabajo diario. Además, mi habilidad analítica me permiten analizar y resolver problemas complejos de manera efectiva.</p>
-    </div>),
+    </>),
 
     insults: (
-    <div>
+    <>
         <p>¿Por qué me insultás? Ni a mi ni a Federico nos gusta esto 😢</p>
         <p>No es el objetivo de este chat. Si querés podes hablar con él por <a href="mailto:federiconavos@gmail.com">email</a>.</p>
-    </div>),
+    </>),
 
     hobbys: (
-    <div>
+    <>
         <p>Soy una persona muy interesada en el mundo de la tecnología, sobre todo en lo que es el mundo <strong>fintech</strong>. Principalmente me considero un experto en todo lo que es criptomonedas <FontAwesomeIcon icon={ faBitcoin } />. Me interesa la blockchain como tecnología y analizar los proyectos que se están desarrollando en este campo.</p>
         <p>Me gusta mucho el fútbol ⚽. Soy hincha fanático de River Plate y me gusta mucho ver los partidos de mi equipo. También me gustan los videojuegos 🎮, es por eso que hice cursos para programación de los mismos.</p>
-    </div>
+    </>
     ),
 
     chat: (
-    <div>
+    <>
         <p>Este chat-bot fue desarrollado con <a href="https://nextjs.org/" target="_blank" rel="noreferrer">Next.js</a> y <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">TypeScript</a> para el front-end.</p>
         <p>Para la clasificación de preguntas utilicé la API de <a href="https://cohere.ai/" target="_blank" rel="noreferrer">Cohere</a>, que brinda herramientas IA gratis para desarrolladores. Entrené el dataset con preguntas y gracias a esto puedo clasificar cada uno de tus mensajes para encontrar la mejor respuesta 🙂.</p>
         <p>El código fuente lo podés encontrar en <a href="https://github.com/fedenavos/chat-bot" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon icon={ faGithub } />.</p>
-    </div>),
+    </>),
 
     default: (<p>Lo siento, soy una IA un poco limitada 😅 y no entiendo algunas preguntas. Podés preguntarme sobre mi experiencia, mi disponibilidad para trabajar, cómo contactarme, entre otras cosas.</p>),
 

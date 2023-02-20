@@ -7,20 +7,24 @@ type MessageProps = {
 export default function Message({ content }: MessageProps) {
   const [output, setOutput] = useState<string | ReactNode>("");
 
+  const typeAnimation = (text: string) => {
+    const interval = setInterval(() => {
+      setOutput((prevOutput) => {
+        const currentIndex = (prevOutput as string).length;
+        if (currentIndex >= text.length) {
+          clearInterval(interval);
+          return prevOutput;
+        }
+        const nextChar = text[currentIndex];
+        return prevOutput + nextChar;
+      });
+    }, 25);
+    return () => clearInterval(interval);
+  };
+
   useEffect(() => {
     if (typeof content === "string") {
-      const interval = setInterval(() => {
-        setOutput((prevOutput) => {
-          const currentIndex = (prevOutput as string).length;
-          if (currentIndex >= content.length) {
-            clearInterval(interval);
-            return prevOutput;
-          }
-          const nextChar = content[currentIndex];
-          return prevOutput + nextChar;
-        });
-      }, 25);
-      return () => clearInterval(interval);
+      typeAnimation(content);
     } else {
       setOutput(content);
     }
