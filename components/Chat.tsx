@@ -189,7 +189,7 @@ const EXAMPLES = [
 
 const ANSWERS = {
 
-    intro: (<p>Soy Federico Navós. Tengo 22 años y vivo en Rosario, Argentina. Soy Ingeniero en Sistemas y Desarrollador Fullstack 💻. Tengo 3 años de experiencia como desarrollador, tanto en aplicaciones web como en análisis de datos. Actualmente trabajo en <a href="http://gptrading.com.ar/newweb/" target="_blank" rel="noreferrer">GP Trading</a> como Desarrollador Python.</p>), 
+    intro: (<p>Gracias por visitar mi bot! 🤗 Soy Federico Navós. Tengo 22 años y vivo en Rosario, Argentina. Soy Ingeniero en Sistemas y Desarrollador Fullstack 💻. Tengo 3 años de experiencia como desarrollador, tanto en aplicaciones web como en análisis de datos. Actualmente trabajo en <a href="http://gptrading.com.ar/newweb/" target="_blank" rel="noreferrer">GP Trading</a> como Desarrollador Python.</p>), 
 
     experience: (
     <>
@@ -360,6 +360,17 @@ const Chat = () => {
                             { message.type === 'bot' ? <Message content={message.content} /> : message.content  }
                         </div>
                     ))}
+                    {
+                        loading && (
+                            <div className={styles.message}>
+                                <div className={styles.loading}>
+                                    <div className={styles.loadingDot}>.</div>
+                                    <div className={styles.loadingDot}>.</div>
+                                    <div className={styles.loadingDot}>.</div>
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
                 <form className={styles.formSend} onSubmit={handleSubmit}>
                     <input
