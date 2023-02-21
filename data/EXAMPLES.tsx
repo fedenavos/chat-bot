@@ -107,8 +107,8 @@ export const EXAMPLES = [
     { "text": "Qué idiomas sabes hablar?", "label": "language" },
     // EDUCATION
     { "text": "Donde estudiaste?", "label": "education" },
-    { "text": "¿Cuál es su nivel de educación más o?", "label": "education" },
-    { "text": "¿Cuál es su título más o?", "label": "education" },
+    { "text": "¿Cuál es su nivel de educación más alto?", "label": "education" },
+    { "text": "¿Cuál es su título?", "label": "education" },
     { "text": "¿Dónde estudió y cuál fue su especialización?", "label": "education" },
     { "text": "¿Cuáles fueron algunos de sus cursos o asignaturas favoritas y por qué?", "label": "education" },
     { "text": "¿Cómo le ayudaron sus estudios a desarrollar habilidades específicas?", "label": "education" },
@@ -151,6 +151,9 @@ export const EXAMPLES = [
     { "text": "Y que tecnologías", "label": "skills" },
     { "text": "Con qué tecnologías trabajas?", "label": "skills" },
     { "text": "Con qué tecnologías tenes experiencia?", "label": "skills" },
+    { "text": "Que lenguajes de programación conocés?", "label": "skills" },
+    { "text": "Que lenguajes de programación usas?", "label": "skills" },
+    { "text": "Que frameworks manejas?", "label": "skills" },
     // LIFE SKILLS
     { "text": "Que habilidades tenes?", "label": "life_skills" },
     { "text": "Que habilidades tenes fuera de la tecnología?", "label": "life_skills" },

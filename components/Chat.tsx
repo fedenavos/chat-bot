@@ -1,13 +1,14 @@
 import styles from "@/styles/Chat.module.css";
 import { useEffect, useRef, useState } from "react";
 // Font Awesome Icons
-import { faAndroid, faAngular, faBitcoin, faCss3Alt, faGithub, faHtml5, faJsSquare, faLinkedin, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faAndroid, faAngular, faBitcoin, faGithub, faJsSquare, faLinkedin, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
 import { faChartLine, faCode, faDatabase, faDownload, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Components
 import Message from "./Message";
 // Examples
 import { EXAMPLES } from "../data/EXAMPLES";
+import Suggestion from "./Suggestion";
 
 
 type Message = {
@@ -30,6 +31,7 @@ const Chat = () => {
     const [question, setQuestion] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const [displaySuggestions, setDisplaySuggestions] = useState<boolean>(true);
+    const [suggestions, setSuggestions] = useState<number[]>([]);
 
     const container = useRef<HTMLDivElement>(null);
 
@@ -41,7 +43,8 @@ const Chat = () => {
                 type: "bot",
             }));
         }, 4000);
-        return () => clearTimeout(interval);        
+        setSuggestionsNum();
+        return () => clearTimeout(interval);  
     }, []);
 
     useEffect(() => {
@@ -91,12 +94,26 @@ const Chat = () => {
         sendMessages(response);
     }
 
+    const SUGGESTIONS = [
+        <Suggestion key={0} tag="Experiencia" question="Podrías hablar un poco sobre tu experiencia laboral?" callback={setQuestion} />,
+        <Suggestion key={1} tag="Cursos" question="Contame sobre los cursos que hiciste" callback={setQuestion} />,
+        <Suggestion key={2} tag="Edad" question="Cuantos años tenés?" callback={setQuestion} />,
+        <Suggestion key={3} tag="Este bot" question="Que usaste para armar este chat?" callback={setQuestion} />,
+        <Suggestion key={4} tag="Idioma" question="Sabes hablar inglés?" callback={setQuestion} />,
+        <Suggestion key={5} tag="Hobbies" question="Que te gusta hacer en tu tiempo libre?" callback={setQuestion} />,
+        <Suggestion key={6} tag="Contacto" question="Como puedo hablar con vos?" callback={setQuestion} />,
+        <Suggestion key={7} tag="Tecnologías" question="Que tecnologías manejás?" callback={setQuestion} />,
+        <Suggestion key={8} tag="Estudios" question="Qué y dónde estudiaste?" callback={setQuestion} />,
+
+    ];
+
     function sendMessages(response: JSX.Element | JSX.Element[]) {
         const DELAY = 3500;
         if (Array.isArray(response)) {
             const len = response.length;
             setTimeout(() => {
                 setLoading(false);
+                setSuggestionsNum();
             }, (len - 1) * DELAY);
             for (let i = 0; i < response.length; i++) {
                 setTimeout(() => {
@@ -116,9 +133,20 @@ const Chat = () => {
             })
             );
             setLoading(false);
+            setSuggestionsNum();
         }
     }
 
+    const setSuggestionsNum = () => {
+        let suggestionNumbers: number[] = [];
+        while (suggestionNumbers.length < 3) {
+            let randomNumber = Math.floor(Math.random() * 5);
+            if (!suggestionNumbers.includes(randomNumber)) {
+                suggestionNumbers.push(randomNumber);
+            }
+        }
+        setSuggestions(suggestionNumbers);
+    }
 
     return (
         <div className={styles.container}>
@@ -148,36 +176,14 @@ const Chat = () => {
                 {
                     displaySuggestions ? (
                         <div className={styles.suggestedMessages}>
-                            <button
-                                className={styles.suggestedMessage}
-                                type="button"
-                                onClick={() => setQuestion("Dónde trabajaste?")}
-                            >Experiencia</button>
-                            <button
-                                className={styles.suggestedMessage}
-                                type="button"
-                                onClick={() => setQuestion("Contame sobre los cursos que hiciste")}
-                            >Cursos</button>
-                            <button
-                                className={styles.suggestedMessage}
-                                type="button"
-                                onClick={() => setQuestion("Cuantos años tenés?")}
-                            >Edad</button>
-                            <button
-                                className={styles.suggestedMessage}
-                                type="button"
-                                onClick={() => setQuestion("Que usaste para armar este chat?")}
-                            >Este bot</button>
-                            <button
-                                className={styles.suggestedMessage}
-                                type="button"
-                                onClick={() => setQuestion("Sabes hablar inglés?")}
-                            >Idioma</button>
-                            <button
+                            {
+                                suggestions.map((suggestion) => SUGGESTIONS[suggestion])
+                            }
+                            <button key={10}
                                 className={styles.suggestedMessage}
                                 type="button"
                                 onClick={() => setDisplaySuggestions(false)}
-                            >▶️</button>
+                            >▶️</button> 
                         </div>
                     ) : (
                         <div className={styles.suggestedMessages}>

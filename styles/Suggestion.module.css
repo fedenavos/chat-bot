@@ -1,0 +1,10 @@
+.suggestedMessage {
+    padding: 0.6em;
+    max-width: 30%;
+    color: black;
+    background-color: lightsteelblue;
+    border-radius: 20px;
+    font-size: 12px;
+    line-height: 1.5em;
+    cursor: pointer;
+}
