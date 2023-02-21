@@ -249,6 +249,7 @@ const ANSWERS = {
         [
             <p key={0}>Me gusta aprender cosas nuevas y me gusta mucho aprender de forma autodidacta. Aquí van algunos de los cursos que realicé en los últimos años:</p>,
             <table key={1}>
+                <tbody>
                 <tr>
                     <th>Course</th>
                     <th>Platform</th>
@@ -281,6 +282,7 @@ const ANSWERS = {
                     <td>Algo Trading <FontAwesomeIcon className={styles.icon} icon={faChartLine} /></td>
                     <td>BCR Capacita</td>
                 </tr>
+                </tbody>
             </table>
         ]),
 
