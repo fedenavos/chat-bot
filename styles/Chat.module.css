@@ -95,6 +95,11 @@
     color: white;
 }
 
+.icon {
+    font-size: 13px;
+    height: 13px;
+    width: 13px;
+}
 
 .loading {
     display: flex;
@@ -124,10 +129,28 @@
     }
 }
 
+.suggestedMessages {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.suggestedMessage {
+    padding: 0.6em;
+    max-width: 40%;
+    color: black;
+    background-color: lightsteelblue;
+    border-radius: 20px;
+    font-size: 12px;
+    line-height: 1.5em;
+    cursor: pointer;
+}
+
 .formSend {
     display: flex;
     align-items: center;
-    margin-top: 1.3em;
 }
 
 .inputSend {
@@ -138,11 +161,12 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     outline: none;
+    font-size: 12px;
 }
 
 .buttonSend {
     padding: 0.5em 2em;
-    font-size: 1.2em;
+    font-size: 1.1em;
     border: 1px solid #ccc;
     border-radius: 20px;
     border-top-left-radius: 0;

@@ -78,8 +78,6 @@ export const EXAMPLES = [
     { "text": "Dónde trabajas?", "label": "experience" },
     { "text": "Tenes curriculum?", "label": "experience" },
     { "text": "Tenes CV?", "label": "experience" },
-    { "text": "Con qué tecnologías trabajas?", "label": "experience" },
-    { "text": "Con qué tecnologías tenes experiencia?", "label": "experience" },
     { "text": "Cuantos años de experiencia tenés?", "label": "experience" },
     { "text": "Experiencia previa", "label": "experience" },
     { "text": "Donde trabajaste antes?", "label": "experience" },
@@ -151,6 +149,8 @@ export const EXAMPLES = [
     { "text": "Que tecnologías tenes en tu stack tecnológico?", "label": "skills" },
     { "text": "Que tecnologías?", "label": "skills" },
     { "text": "Y que tecnologías", "label": "skills" },
+    { "text": "Con qué tecnologías trabajas?", "label": "skills" },
+    { "text": "Con qué tecnologías tenes experiencia?", "label": "skills" },
     // LIFE SKILLS
     { "text": "Que habilidades tenes?", "label": "life_skills" },
     { "text": "Que habilidades tenes fuera de la tecnología?", "label": "life_skills" },
