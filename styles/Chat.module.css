@@ -24,6 +24,36 @@
     text-decoration: underline;
 }
 
+.titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.langContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8em;
+    margin-left: 1.2em;
+}
+
+.langButton {
+    padding: 0.5em 1em;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    font-size: 0.8rem;
+}
+
+.active {
+    color: #007bff;
+}
+
 .chat {
   height: 100%;
   width: 100%;

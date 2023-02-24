@@ -219,7 +219,6 @@ export const EXAMPLES = [
     { "text": "Bueno para nada", "label": "insults" },
     // UNKNOWN
     { "text": "Tenes perro?", "label": "unknown" },
-    { "text": "Cuál es tu hobby?", "label": "unknown" },
     { "text": "Conoces a chatGPT?", "label": "unknown" },
     { "text": "¿Tienes alguna debilidad que hayas trabajado para mejorar?", "label": "unknown" },
     { "text": "¿Qué logros te enorgullecen más en tu carrera?", "label": "unknown" },
@@ -237,6 +236,489 @@ export const EXAMPLES = [
     { "text": "dasgaherw", "label": "unknown" },
     { "text": "¿Qué es lo que más te gusta de tu trabajo?", "label": "unknown" },
     { "text": "¿Qué es lo que menos te gusta de tu trabajo?", "label": "unknown" },
+    { "text": "isdagkmfokocwo", "label": "unknown" },
+    { "text": "Random", "label": "unknown" },
+    { "text": "2828931", "label": "unknown" },
+];
+
+export const EXAMPLES_EN = [
+    // INTRO
+    { "text": "Hello", "label": "intro" },
+    { "text": "How are you?", "label": "intro" },
+    { "text": "Who are you?", "label": "intro" },
+    { "text": "Where do you work?", "label": "intro" },
+    { "text": "What is your current job?", "label": "intro" },
+    { "text": "Where are you working?", "label": "intro" },
+    { "text": "What's your name?", "label": "intro" },
+    { "text": "What is your name?", "label": "intro" },
+    { "text": "Tell me about yourself", "label": "intro" },
+    { "text": "Tell me about your life", "label": "intro" },
+    { "text": "Give me an introduction", "label": "intro" },
+    { "text": "Give me a description", "label": "intro" },
+    { "text": "Give me a description of yourself", "label": "intro" },
+    { "text": "Intro", "label": "intro" },
+    { "text": "Presentation", "label": "intro" },
+    { "text": "Hi, how are you?", "label": "intro" },
+    { "text": "Howdy, how are you?", "label": "intro" },
+    { "text": "Hi, how is it going?", "label": "intro" },
+    { "text": "Hello, how are you doing?", "label": "intro" },
+    { "text": "Hey there, how are you?", "label": "intro" },
+    { "text": "Hello, what's up?", "label": "intro" },
+    { "text": "Good morning!", "label": "intro" },
+    { "text": "Good afternoon!", "label": "intro" },
+    { "text": "Good evening!", "label": "intro" },
+    { "text": "Good to see you!", "label": "intro" },
+    { "text": "It's nice to see you again!", "label": "intro" },
+    { "text": "Nice to meet you!", "label": "intro" },
+    { "text": "How are you today?", "label": "intro" },
+    { "text": "How's your day going?", "label": "intro" },
+    // AGE
+    { "text": "How old are you?", "label": "age" },
+    { "text": "What is your age?", "label": "age" },
+    { "text": "What is your date of birth?", "label": "age" },
+    { "text": "What is your birthday?", "label": "age" },
+    { "text": "Where were you born?", "label": "age" },
+    // LOCATION
+    { "text": "What's your place of residence?", "label": "location" },
+    { "text": "Where do you live?", "label": "location" },
+    { "text": "Where were you born?", "label": "location" },
+    { "text": "Where have you lived?", "label": "location" },
+    // NEW JOB
+    { "text": "I have a job offer for you", "label": "newjob" },
+    { "text": "Are you interested in changing jobs?", "label": "newjob" },
+    { "text": "Are you looking for a job?", "label": "newjob" },
+    { "text": "Are you open to new job opportunities?", "label": "newjob" },
+    { "text": "Would you be interested in changing jobs?", "label": "newjob" },
+    { "text": "When could you start working?", "label": "newjob" },
+    { "text": "What's your availability to start working?", "label": "newjob" },
+    { "text": "New job", "label": "newjob" },
+    { "text": "Job offer", "label": "newjob" },
+    // CONTACT
+    {
+        "text": "I want to talk to Federico",
+        "label": "contact"
+    },
+    {
+        "text": "How can I contact you?",
+        "label": "contact"
+    },
+    {
+        "text": "I want to send you a message",
+        "label": "contact"
+    },
+    {
+        "text": "How can I communicate with you?",
+        "label": "contact"
+    },
+    {
+        "text": "I have a question",
+        "label": "contact"
+    },
+    {
+        "text": "I want to ask you something",
+        "label": "contact"
+    },
+    {
+        "text": "What's your LinkedIn profile?",
+        "label": "contact"
+    },
+    {
+        "text": "What's your Github profile?",
+        "label": "contact"
+    },
+    {
+        "text": "Can I ask you a question?",
+        "label": "contact"
+    },
+    {
+        "text": "What are your social media profiles?",
+        "label": "contact"
+    },
+    {
+        "text": "What's your expected salary?",
+        "label": "contact"
+    },
+    {
+        "text": "What's your email address?",
+        "label": "contact"
+    },
+    {
+        "text": "What's your phone number?",
+        "label": "contact"
+    },
+    {
+        "text": "Can you provide your social media profiles?",
+        "label": "contact"
+    },
+    {
+        "text": "What's your preferred time to be contacted?",
+        "label": "contact"
+    },
+    {
+        "text": "How would you like to be contacted?",
+        "label": "contact"
+    },
+    {
+        "text": "What's your availability for an interview?",
+        "label": "contact"
+    },
+    {
+        "text": "What day and time works best for an interview?",
+        "label": "contact"
+    },
+    {
+        "text": "Is there any preferred way of contact?",
+        "label": "contact"
+    },
+    {
+        "text": "Is there any particular time when you cannot be contacted?",
+        "label": "contact"
+    },
+    {
+        "text": "What's your current salary?",
+        "label": "contact"
+    },
+    {
+        "text": "What's your desired salary?",
+        "label": "contact"
+    },
+    {
+        "text": "What's your expected salary?",
+        "label": "contact"
+    },
+    {
+        "text": "What's your minimum salary?",
+        "label": "contact"
+    },
+    {
+        "text": "And how can I contact you?",
+        "label": "contact"
+    },
+    {
+        "text": "And how can I call you?",
+        "label": "contact"
+    },
+    {
+        "text": "What's the way to talk to you?",
+        "label": "contact"
+    },
+    {
+        "text": "What's the way to contact you?",
+        "label": "contact"
+    },
+    {
+        "text": "Contact",
+        "label": "contact"
+    },
+    {
+        "text": "Phone",
+        "label": "contact"
+    },
+    {
+        "text": "Email",
+        "label": "contact"
+    },
+    {
+        "text": "Mail",
+        "label": "contact"
+    },
+    {
+        "text": "Social media",
+        "label": "contact"
+    },
+    {
+        "text": "LinkedIn",
+        "label": "contact"
+    },
+    {
+        "text": "Github",
+        "label": "contact"
+    },
+    {
+        "text": "Twitter",
+        "label": "contact"
+    },
+    // EXPERIENCE
+    { "text": "Where do you work?", "label": "experience" },
+    { "text": "Do you have a resume?", "label": "experience" },
+    { "text": "Do you have a CV?", "label": "experience" },
+    { "text": "How many years of experience do you have?", "label": "experience" },
+    { "text": "Previous experience", "label": "experience" },
+    { "text": "Where did you work before?", "label": "experience" },
+    { "text": "How was your career?", "label": "experience" },
+    { "text": "How was your work life?", "label": "experience" },
+    { "text": "How was your professional life?", "label": "experience" },
+    { "text": "How would you describe your previous experience?", "label": "experience" },
+    { "text": "Can you provide work references?", "label": "experience" },
+    { "text": "Can you talk a bit about your previous work experience?", "label": "experience" },
+    { "text": "What is your biggest professional achievement?", "label": "experience" },
+    { "text": "What tasks have you done in previous jobs that you particularly liked?", "label": "experience" },
+    { "text": "Can you provide an example of a project you worked on and how you carried it out?", "label": "experience" },
+    { "text": "And what experience do you have?", "label": "experience" },
+    { "text": "Your experience", "label": "experience" },
+    { "text": "Your work experience", "label": "experience" },
+    { "text": "Your professional experience", "label": "experience" },
+    { "text": "Your professional career", "label": "experience" },
+    { "text": "Your work career", "label": "experience" },
+    // LANGUAGE
+    {
+        "text": "Do you know English?",
+        "label": "language"
+    },
+    {
+        "text": "What languages do you know?",
+        "label": "language"
+    },
+    {
+        "text": "Could you have a basic conversation in English?",
+        "label": "language"
+    },
+    {
+        "text": "What is your level of comprehension in English?",
+        "label": "language"
+    },
+    {
+        "text": "Have you taken any language courses or certifications?",
+        "label": "language"
+    },
+    {
+        "text": "What is your level of English?",
+        "label": "language"
+    },
+    {
+        "text": "And your English?",
+        "label": "language"
+    },
+    {
+        "text": "And your language?",
+        "label": "language"
+    },
+    {
+        "text": "What languages can you speak?",
+        "label": "language"
+    },
+    // EDUCATION
+    { "text": "Where did you study?", "label": "education" },
+    { "text": "What is your highest level of education?", "label": "education" },
+    { "text": "What is your degree?", "label": "education" },
+    { "text": "Where did you study and what was your specialization?", "label": "education" },
+    { "text": "What were some of your favorite courses or subjects and why?", "label": "education" },
+    { "text": "How did your studies help you develop specific skills?", "label": "education" },
+    { "text": "Did you receive any awards or recognition for your academic performance?", "label": "education" },
+    { "text": "How has your academic performance been throughout your career?", "label": "education" },
+    { "text": "And your education?", "label": "education" },
+    { "text": "And your training?", "label": "education" },
+    { "text": "And your academic background?", "label": "education" },
+    { "text": "Studies?", "label": "education" },
+    { "text": "What did you graduate in?", "label": "education" },
+    { "text": "Did you graduate?", "label": "education" },
+    // COURSES
+    { "text": "What courses did you take?", "label": "courses" },
+    { "text": "What courses did you do?", "label": "courses" },
+    { "text": "What courses did you take in university?", "label": "courses" },
+    { "text": "What courses did you take in faculty?", "label": "courses" },
+    { "text": "What courses did you take in school?", "label": "courses" },
+    { "text": "What trainings or courses have you received?", "label": "courses" },
+    { "text": "What educational programs have you completed?", "label": "courses" },
+    { "text": "What workshops or seminars have you attended?", "label": "courses" },
+    { "text": "What certifications or accreditations do you have?", "label": "courses" },
+    { "text": "What additional studies have you pursued?", "label": "courses" },
+    { "text": "What training courses have you taken?", "label": "courses" },
+    { "text": "What additional learning have you acquired?", "label": "courses" },
+    { "text": "What professional development programs have you completed?", "label": "courses" },
+    { "text": "What continuous learning activities have you engaged in?", "label": "courses" },
+    { "text": "What executive education programs have you completed?", "label": "courses" },
+    { "text": "What training courses have you taken?", "label": "courses" },
+    { "text": "Courses", "label": "courses" },
+    { "text": "Courses you did", "label": "courses" },
+    { "text": "Courses you took", "label": "courses" },
+    // SKILLS
+    {
+        "text": "What technologies do you use?",
+        "label": "skills"
+    },
+    {
+        "text": "What technologies do you know?",
+        "label": "skills"
+    },
+    {
+        "text": "What technologies do you handle?",
+        "label": "skills"
+    },
+    {
+        "text": "What technologies do you have?",
+        "label": "skills"
+    },
+    {
+        "text": "What technologies do you have in your stack?",
+        "label": "skills"
+    },
+    {
+        "text": "What technologies do you have in your tech stack?",
+        "label": "skills"
+    },
+    {
+        "text": "What technologies?",
+        "label": "skills"
+    },
+    {
+        "text": "And what technologies?",
+        "label": "skills"
+    },
+    {
+        "text": "What technologies do you work with?",
+        "label": "skills"
+    },
+    {
+        "text": "What technologies do you have experience with?",
+        "label": "skills"
+    },
+    {
+        "text": "What programming languages do you know?",
+        "label": "skills"
+    },
+    {
+        "text": "What programming languages do you use?",
+        "label": "skills"
+    },
+    {
+        "text": "What frameworks do you handle?",
+        "label": "skills"
+    },
+    // LIFE SKILLS
+    {
+        "text": "What life skills do you have?",
+        "label": "life_skills"
+    },
+    {
+        "text": "What life skills do you have outside of technology?",
+        "label": "life_skills"
+    },
+    {
+        "text": "What life skills do you have outside of programming?",
+        "label": "life_skills"
+    },
+    {
+        "text": "What life skills do you have outside of computer science?",
+        "label": "life_skills"
+    },
+    {
+        "text": "What are some of your personal strengths that you believe make you a good candidate for this job?",
+        "label": "life_skills"
+    },
+    {
+        "text": "How would you describe your ability to work in a team and collaborate with others?",
+        "label": "life_skills"
+    },
+    {
+        "text": "How would you describe your ability to work under pressure?",
+        "label": "life_skills"
+    },
+    {
+        "text": "And your competencies?",
+        "label": "life_skills"
+    },
+    {
+        "text": "What are some of your personal strengths?",
+        "label": "life_skills"
+    },
+    {
+        "text": "What are your best skills?",
+        "label": "life_skills"
+    },
+    {
+        "text": "Could you talk about your most outstanding skills?",
+        "label": "life_skills"
+    },
+    {
+        "text": "What are your strengths?",
+        "label": "life_skills"
+    },
+    {
+        "text": "What are your strong points?",
+        "label": "life_skills"
+    },
+    {
+        "text": "What are you good at?",
+        "label": "life_skills"
+    },
+    {
+        "text": "Life skills",
+        "label": "life_skills"
+    },
+    {
+        "text": "Aptitudes",
+        "label": "life_skills"
+    },
+    {
+        "text": "Competencies",
+        "label": "life_skills"
+    },
+    // HOBBYS
+    { "text": "What do you do in your free time?", "label": "hobbys" },
+    { "text": "And your hobbies?", "label": "hobbys" },
+    { "text": "What is your favorite hobby?", "label": "hobbys" },
+    { "text": "What hobbies do you have?", "label": "hobbys" },
+    { "text": "What is your favorite hobby and why do you like it so much?", "label": "hobbys" },
+    { "text": "How has your hobby benefited your personal and professional life?", "label": "hobbys" },
+    { "text": "Have you applied any skill or knowledge that you have obtained from your hobby to your work?", "label": "hobbys" },
+    { "text": "Could you tell me about an interesting project you have worked on related to your hobby?", "label": "hobbys" },
+    { "text": "Have you had any leadership or teamwork opportunities related to your hobby?", "label": "hobbys" },
+    { "text": "What skills have you acquired through your hobby that could be relevant to this job?", "label": "hobbys" },
+    { "text": "Do you have any hobby that demonstrates your ability to solve problems?", "label": "hobbys" },
+    { "text": "Have you been able to teach or share your hobby with other people?", "label": "hobbys" },
+    { "text": "How has your hobby influenced your decision-making and attitude towards work?", "label": "hobbys" },
+    { "text": "Hobbies", "label": "hobbys" },
+    { "text": "Interests", "label": "hobbys" },
+    { "text": "Pastimes", "label": "hobbys" },
+    { "text": "Pastime", "label": "hobbys" },
+    { "text": "Hobby", "label": "hobbys" },
+    // CHAT
+    { "text": "How did you make this chat?", "label": "chat" },
+    { "text": "How does this work?", "label": "chat" },
+    { "text": "What did you use to build this application?", "label": "chat" },
+    { "text": "What did you use to build this chat?", "label": "chat" },
+    { "text": "What did you use to build this bot?", "label": "chat" },
+    { "text": "What did you use to build this virtual assistant?", "label": "chat" },
+    { "text": "What did you use to build this assistant?", "label": "chat" },
+    { "text": "Tell me about this chat?", "label": "chat" },
+    { "text": "Tell me about this bot?", "label": "chat" },
+    { "text": "How does this application work?", "label": "chat" },
+    { "text": "How does this bot work?", "label": "chat" },
+    { "text": "What technology is behind this application?", "label": "chat" },
+    { "text": "What technologies did you use to build this?", "label": "chat" },
+    // INSULTS
+    { "text": "Idiot", "label": "insults" },
+    { "text": "Liar", "label": "insults" },
+    { "text": "Fool", "label": "insults" },
+    { "text": "Stupid", "label": "insults" },
+    { "text": "Narrow-minded", "label": "insults" },
+    { "text": "You're useless", "label": "insults" },
+    { "text": "Inept", "label": "insults" },
+    { "text": "You do nothing", "label": "insults" },
+    { "text": "You're good for nothing", "label": "insults" },
+    { "text": "Incompetent", "label": "insults" },
+    { "text": "Good for nothing", "label": "insults" },
+    // UNKNOWN
+    { "text": "Do you have a dog?", "label": "unknown" },
+    { "text": "What is your hobby?", "label": "unknown" },
+    { "text": "Do you know ChatGPT?", "label": "unknown" },
+    { "text": "Do you have any weaknesses that you have worked to improve?", "label": "unknown" },
+    { "text": "What accomplishments are you most proud of in your career?", "label": "unknown" },
+    { "text": "What type of work do you find most challenging?", "label": "unknown" },
+    { "text": "How do you adapt to new or unknown situations?", "label": "unknown" },
+    { "text": "How do you motivate yourself?", "label": "unknown" },
+    { "text": "Have you worked on a project that failed? What did you learn from it?", "label": "unknown" },
+    { "text": "How do you manage stress and pressure at work?", "label": "unknown" },
+    { "text": "How do you deal with conflicts at work?", "label": "unknown" },
+    { "text": "How do you stay organized and focused on your tasks?", "label": "unknown" },
+    { "text": "Do you have experience in leading teams? How do you do it?", "label": "unknown" },
+    { "text": "What skills or knowledge would you like to develop in the future?", "label": "unknown" },
+    { "text": "How do you define success in your career?", "label": "unknown" },
+    { "text": "Tell me about life", "label": "unknown" },
+    { "text": "dasgaherw", "label": "unknown" },
+    { "text": "What do you like most about your job?", "label": "unknown" },
+    { "text": "What do you like least about your job?", "label": "unknown" },
     { "text": "isdagkmfokocwo", "label": "unknown" },
     { "text": "Random", "label": "unknown" },
     { "text": "2828931", "label": "unknown" },
