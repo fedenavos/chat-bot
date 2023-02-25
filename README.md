@@ -28,10 +28,10 @@ The bot should now be up and running at http://localhost:3000.
 
 ## Screenshots
 
-![App Screenshot](https://i.postimg.cc/KjNXpSZv/2023-02-25-11-33-14-portfolio-Visual-Studio-Code.png)
+![App Screenshot](https://i.postimg.cc/KjNXpSZv/2023-02-25-11-33-14-portfolio-Visual-Studio-Code.png =250x)
 
-![App Screenshot](https://i.postimg.cc/JnjCJHvX/2023-02-25-11-33-29-Federico-Chat-Bot-Brave.png)
+![App Screenshot](https://i.postimg.cc/JnjCJHvX/2023-02-25-11-33-29-Federico-Chat-Bot-Brave.png =250x)
 
-![App Screenshot](https://i.postimg.cc/kG93yXPp/2023-02-25-11-33-41-portfolio-Visual-Studio-Code.png)
+![App Screenshot](https://i.postimg.cc/kG93yXPp/2023-02-25-11-33-41-portfolio-Visual-Studio-Code.png =250x)
 
-![App Screenshot](https://i.postimg.cc/d0bKLjHv/2023-02-25-11-34-00-portfolio-Visual-Studio-Code.png)
+![App Screenshot](https://i.postimg.cc/d0bKLjHv/2023-02-25-11-34-00-portfolio-Visual-Studio-Code.png =250x)
