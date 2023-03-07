@@ -270,12 +270,12 @@ const ANSWERS = {
         [
             <p key={0}>Desde 2021 a la actualidad, me encuentro trabajando en GP Trading como Desarrollador Python, haciendo automatización de informes, scraping de datos y desarrollo de estrategias de trading 📈.</p>,
             <p key={1}>He trabajado en NEORIS como Desarrollador Fullstack, utilizando tecnologías como Angular, entorno .NET y SQL Server. Podés encontrar más información sobre mi carrera <a href="https://drive.google.com/uc?export=download&id=1vdsco5P4G9WOPWEyO2gt2ckJH2zPhdQF">descargando mi CV aquí</a>.</p>,
-            <p key={2}>También me gusta desarrollar proyectos personales para aprender nuevas tecnologías. Puedes encontrarlos en mi <a href="https://federiconavos.com" target="_blank" rel="noreferrer">mi página de portfolio</a> o en mi <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
+            <p key={2}>También me gusta desarrollar proyectos personales para aprender nuevas tecnologías. Puedes encontrarlos en mi <a href="https://www.federiconavos.com" target="_blank" rel="noreferrer">mi página de portfolio</a> o en mi <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
         ]),
 
-    newjob: (<p>No estoy activamente buscando trabajo en este momento, pero estoy dispuesto a escuchar cualquier propuesta. Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> o enviarme un <a href="mailto:federiconavos@gmail.com">email</a> y con gusto te responderé 🤗.</p>),
+    newjob: (<p>No estoy activamente buscando trabajo en este momento, pero estoy dispuesto a escuchar cualquier propuesta. Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> o enviarme un <a href="mailto:fedenavos@gmail.com">email</a> y con gusto te responderé 🤗.</p>),
 
-    contact: (<p>Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> o enviarme un <a href="mailto:federiconavos@gmail.com">email</a> en cualquier momento 🕑.</p>),
+    contact: (<p>Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> o enviarme un <a href="mailto:fedenavos@gmail.com">email</a> en cualquier momento 🕑.</p>),
 
     language: (<p>Me manejo muy bien con el inglés, tanto hablado como escrito. Tengo aprobado el First Certificate in English (FCE) con una calificación de 179/190, es decir, que tengo un nivel B2.</p>),
 
@@ -354,7 +354,7 @@ const ANSWERS = {
     insults: (
         <>
             <p>¿Por qué me insultás? Ni a mi ni a Federico nos gusta esto 😢</p>
-            <p>No es el objetivo de este chat. Si querés podes hablar con él por <a href="mailto:federiconavos@gmail.com">email</a>.</p>
+            <p>No es el objetivo de este chat. Si querés podes hablar con él por <a href="mailto:fedenavos@gmail.com">email</a>.</p>
         </>),
 
     hobbys: (
@@ -390,13 +390,13 @@ const ANSWERS_EN = {
         [
             <p key={0}>Since 2021 I&apos;m working at <a href="http://gptrading.com.ar/newweb/" target="_blank" rel="noreferrer">GP Trading</a> as a Python Developer, doing reports automation, data scraping and trading strategies development 📈.</p>,
             <p key={1}>I&apos;ve worked at <a href="https://www.neoris.com/" target="_blank" rel="noreferrer">NEORIS</a> as a Fullstack Developer, using technologies like Angular, .NET environment and SQL Server. You can find more information about my career <a href="https://drive.google.com/uc?export=download&id=1vdsco5P4G9WOPWEyO2gt2ckJH2zPhdQF">downloading my CV here</a>.</p>,
-            <p key={2}>I also like to develop personal projects to learn new technologies. You can find them in my <a href="https://federiconavos.com" target="_blank" rel="noreferrer">portfolio page</a> or in my <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
+            <p key={2}>I also like to develop personal projects to learn new technologies. You can find them in my <a href="https://www.federiconavos.com" target="_blank" rel="noreferrer">portfolio page</a> or in my <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
         ]
     ),
 
-    newjob: (<p>I&apos;m not actively looking for a job at the moment, but I&apos;m open to any proposal. You can contact me through my <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> or send me an <a href="mailto:federiconavos@gmail.com">email</a> and I&apos;ll gladly answer you 🤗.</p>),
+    newjob: (<p>I&apos;m not actively looking for a job at the moment, but I&apos;m open to any proposal. You can contact me through my <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> or send me an <a href="mailto:fedenavos@gmail.com">email</a> and I&apos;ll gladly answer you 🤗.</p>),
 
-    contact: (<p>You can contact me through my <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> or send me an <a href="mailto:federiconavos@gmail.com">email</a> at any time 🕑.</p>),
+    contact: (<p>You can contact me through my <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> or send me an <a href="mailto:fedenavos@gmail.com">email</a> at any time 🕑.</p>),
 
     language: (<p>I&apos;m very fluent in English, both spoken and written. I&apos;ve passed the First Certificate in English (FCE) with a score of 179/190, which means I have a B2 level.</p>),
 
@@ -478,7 +478,7 @@ const ANSWERS_EN = {
     insults: (
         <>
             <p>Why are you insulting me? Neither me nor Federico like this 😢</p>
-            <p>It&apos;s not the goal of this chat. If you want you can talk to him by <a href="mailto:federiconavos@gmail.com">email</a>.</p>
+            <p>It&apos;s not the goal of this chat. If you want you can talk to him by <a href="mailto:fedenavos@gmail.com">email</a>.</p>
         </>
     ),
 
