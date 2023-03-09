@@ -81,6 +81,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    margin: 0;
+    padding: 0;
 }
 
 * {
