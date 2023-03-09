@@ -190,11 +190,11 @@ const Chat = () => {
             {
                 lang === 'es' ? (
                     <p className={styles.description}>
-                        Bot que responde preguntas sobre Federico Navós, utilizando <a href="https://cohere.ai/" target="_blank" rel="noreferrer">Cohere</a>.
+                        Bot que responde preguntas sobre Federico Navós, utilizando <a className={styles.link} href="https://cohere.ai/" target="_blank" rel="noreferrer">Cohere</a>.
                     </p>
                 ) : (
                     <p className={styles.description}>
-                        Bot that answers questions about Federico Navós, using <a href="https://cohere.ai/" target="_blank" rel="noreferrer">Cohere</a>.
+                        Bot that answers questions about Federico Navós, using <a className={styles.link} href="https://cohere.ai/" target="_blank" rel="noreferrer">Cohere</a>.
                     </p>
                 )
             }

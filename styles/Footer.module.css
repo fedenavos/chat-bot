@@ -6,6 +6,17 @@
     margin-top: 2.5em;
 }
 
+@media (prefers-color-scheme: dark) {
+    .footer {
+        background-color: #1a1a1a90;
+        color: white;
+    }
+
+    .socialIcon {
+        color: white;
+    }
+}
+
 .footerContent {
     display: flex;
     flex-direction: column;

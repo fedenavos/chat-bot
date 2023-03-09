@@ -31,6 +31,17 @@
     gap: 1em;
 }
 
+.link {
+    text-decoration: underline;
+    color: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+    .link {
+        color: white;
+    }
+}
+
 .langContainer {
     display: flex;
     align-items: center;
@@ -142,6 +153,12 @@
     color: black;
 }
 
+@media (prefers-color-scheme: dark) {
+    .loading {
+        color: white;
+    }
+}
+
 .loadingDot {
     animation: loading 1s infinite;
 }
@@ -191,6 +208,22 @@
     border-bottom-right-radius: 0;
     outline: none;
     font-size: 12px;
+}
+
+/* Set disabled style to input */
+.inputSend:disabled {
+    background-color: #ccc;
+}
+
+@media (prefers-color-scheme: dark) {
+    .inputSend {
+        background-color: #333;
+        color: white;
+    }
+
+    .inputSend:disabled {
+        background-color: #333;
+    }
 }
 
 .buttonSend {
