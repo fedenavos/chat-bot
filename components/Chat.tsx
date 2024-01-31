@@ -1,7 +1,7 @@
 import styles from "@/styles/Chat.module.css";
 import { useEffect, useRef, useState } from "react";
 // Font Awesome Icons
-import { faAndroid, faAngular, faBitcoin, faGithub, faJsSquare, faLinkedin, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faAndroid, faAws, faAngular, faBitcoin, faGithub, faJsSquare, faLinkedin, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
 import { faChartLine, faCode, faDatabase, faDownload, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Components
@@ -99,8 +99,8 @@ const Chat = () => {
         confidence = Math.round(confidence);
 
         const response =
-            lang == 'es' ? ANSWERS[prediction as keyof typeof ANSWERS] || ANSWERS.default : 
-                            ANSWERS_EN[prediction as keyof typeof ANSWERS_EN] || ANSWERS_EN.default;
+            lang == 'es' ? ANSWERS[prediction as keyof typeof ANSWERS] || ANSWERS.default :
+                ANSWERS_EN[prediction as keyof typeof ANSWERS_EN] || ANSWERS_EN.default;
 
         sendMessages(response);
     }
@@ -260,24 +260,24 @@ export default Chat;
 
 const ANSWERS = {
 
-    intro: (<p>Gracias por visitar mi bot! 🤗 Soy Federico Navós. Tengo 22 años y vivo en Rosario, Argentina. Soy Ingeniero en Sistemas y Desarrollador Fullstack 💻. Tengo 3 años de experiencia como desarrollador, tanto en aplicaciones web como en análisis de datos. Actualmente trabajo en <a href="http://gptrading.com.ar/newweb/" target="_blank" rel="noreferrer">GP Trading</a> como Desarrollador Python.</p>),
+    intro: (<p>¡Gracias por visitar mi bot! 🤗 Soy Federico Navós. Tengo 23 años y vivo en Rosario, Argentina. Soy Ingeniero en Sistemas de Información y Desarrollador Fullstack 💻. Poseo una amplia experiencia en desarrollo con Python, servicios en la nube y desarrollo full-stack. Actualmente, trabajo en <a href="https://www.dxc.technology/" target="_blank" rel="noreferrer">DXC Technology</a> como Desarrollador Python.</p>),
 
-    age: (<p>Tengo 22 años 🎂. Naci el 31 de mayo del 2000.</p>),
+    age: (<p>Tengo 23 años 🎂. Nací el 31 de mayo del 2000.</p>),
 
-    location: (<p>Vivo en Rosario, 🇦🇷. Tierra de Messi.</p>),
+    location: (<p>Vivo en Rosario, 🇦🇷. La ciudad de Messi.</p>),
 
     experience: (
         [
-            <p key={0}>Desde 2021 a la actualidad, me encuentro trabajando en GP Trading como Desarrollador Python, haciendo automatización de informes, scraping de datos y desarrollo de estrategias de trading 📈.</p>,
-            <p key={1}>He trabajado en NEORIS como Desarrollador Fullstack, utilizando tecnologías como Angular, entorno .NET y SQL Server. Podés encontrar más información sobre mi carrera <a href="https://drive.google.com/uc?export=download&id=1vdsco5P4G9WOPWEyO2gt2ckJH2zPhdQF">descargando mi CV aquí</a>.</p>,
-            <p key={2}>También me gusta desarrollar proyectos personales para aprender nuevas tecnologías. Puedes encontrarlos en mi <a href="https://www.federiconavos.com" target="_blank" rel="noreferrer">mi página de portfolio</a> o en mi <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
+            <p key={0}>Desde abril de 2023, estoy trabajando en <a href="https://www.dxc.technology/" target="_blank" rel="noreferrer">DXC Technology</a> como Desarrollador Python, enfocándome en servicios en la nube con AWS, funciones serverless e infraestructura como código.</p>,
+            <p key={1}>Previamente, trabajé en G.P. Trading como Desarrollador Python, donde participé en el desarrollo y backtesting de estrategias de trading y en la adquisición de datos mediante web scraping.</p>,
+            <p key={2}>También tengo experiencia como Desarrollador Fullstack en NEORIS, usando tecnologías como Angular, .NET y SQL Server. Para más detalles, puedes visitar mi perfil en <a href="https://www.linkedin.com/in/federico-navos" target="_blank" rel="noreferrer">LinkedIn</a> o echar un vistazo a mis proyectos en <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
         ]),
 
-    newjob: (<p>No estoy activamente buscando trabajo en este momento, pero estoy dispuesto a escuchar cualquier propuesta. Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> o enviarme un <a href="mailto:fedenavos@gmail.com">email</a> y con gusto te responderé 🤗.</p>),
+    newjob: (<p>En este momento no estoy buscando activamente nuevas oportunidades laborales, pero estoy abierto a propuestas interesantes. Puedes contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> o enviarme un <a href="mailto:fedenavos@gmail.com">email</a> y te responderé con gusto 🤗.</p>),
 
-    contact: (<p>Podés contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> o enviarme un <a href="mailto:fedenavos@gmail.com">email</a> en cualquier momento 🕑.</p>),
+    contact: (<p>Puedes contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> o enviarme un <a href="mailto:fedenavos@gmail.com">email</a> en cualquier momento 🕑.</p>),
 
-    language: (<p>Me manejo muy bien con el inglés, tanto hablado como escrito. Tengo aprobado el First Certificate in English (FCE) con una calificación de 179/190, es decir, que tengo un nivel B2.</p>),
+    language: (<p>Manejo el inglés con fluidez, poseo una certificación de nivel B2. Aprobé el First Certificate in English (FCE) con una puntuación de 179/190.</p>),
 
     education: (
         [
@@ -289,40 +289,44 @@ const ANSWERS = {
 
     courses: (
         [
-            <p key={0}>Me gusta aprender cosas nuevas y me gusta mucho aprender de forma autodidacta. Aquí van algunos de los cursos que realicé en los últimos años:</p>,
+            <p key={0}>Continuamente busco aprender y actualizar mis habilidades. Aquí algunos de los cursos que he completado:</p>,
             <table key={1}>
                 <tbody>
                     <tr>
-                        <th>Course</th>
-                        <th>Platform</th>
+                        <th>Curso</th>
+                        <th>Plataforma</th>
                     </tr>
                     <tr>
                         <td>Curso de Introducción al Desarrollo Web: HTML y CSS</td>
                         <td>Google Actívate</td>
                     </tr>
                     <tr>
-                        <td>Angular <FontAwesomeIcon className={styles.icon} icon={faAngular} />: De cero a experto (Legacy)</td>
+                        <td>Angular: De cero a experto (Legacy)</td>
                         <td>Udemy, Fernando Herrera</td>
                     </tr>
                     <tr>
-                        <td>The Complete 2020 Flutter Development Bootcamp with Dart <FontAwesomeIcon className={styles.icon} icon={faAndroid} /></td>
+                        <td>The Complete 2020 Flutter Development Bootcamp with Dart</td>
                         <td>Udemy, Dr. Angela Yu</td>
                     </tr>
                     <tr>
-                        <td>La guía definitiva del desarrollo de videojuegos con Unity <FontAwesomeIcon className={styles.icon} icon={faGamepad} /></td>
-                        <td>Udemy, Juan Pablo de la Torre Valdez</td>
+                        <td>La guía definitiva del desarrollo de videojuegos con Unity</td>
+                        <td>Udemy, Unity</td>
                     </tr>
                     <tr>
-                        <td>Laboratorio .NET <FontAwesomeIcon className={styles.icon} icon={faCode} /></td>
+                        <td>Laboratorio .NET</td>
                         <td>NEORIS</td>
                     </tr>
                     <tr>
-                        <td>Taller de Estrategia de Portafolio de Inversión <FontAwesomeIcon className={styles.icon} icon={faChartLine} /></td>
-                        <td>Clave Bursátil, con Matias Batista</td>
+                        <td>Taller de Estrategia de Portafolio de Inversión</td>
+                        <td>Clave Bursátil, Matías Batista</td>
                     </tr>
                     <tr>
-                        <td>Algo Trading <FontAwesomeIcon className={styles.icon} icon={faChartLine} /></td>
+                        <td>Algo Trading</td>
                         <td>BCR Capacita</td>
+                    </tr>
+                    <tr>
+                        <td>AWS Lambda - Guía Práctica</td>
+                        <td>Udemy, Daniel Galati</td>
                     </tr>
                 </tbody>
             </table>
@@ -330,17 +334,18 @@ const ANSWERS = {
 
     skills: (
         <>
-            <p>Soy una persona que siempre está buscando aprender nuevas tecnologías. Aquí van algunas de las tecnologías que fui aprendiendo, tanto en la facultad como de forma autodidacta:</p>
+            <p>Como desarrollador, tengo un conjunto diverso de habilidades técnicas. Aquí algunas de las tecnologías y herramientas con las que he trabajado:</p>
             <ul>
                 <li>Python <FontAwesomeIcon className={styles.icon} icon={faPython} /></li>
-                <li>React/Next JS <FontAwesomeIcon className={styles.icon} icon={faReact} /></li>
+                <li>Servicios de AWS <FontAwesomeIcon className={styles.icon} icon={faAws} /></li>
+                <li>React <FontAwesomeIcon className={styles.icon} icon={faReact} /></li>
                 <li>JavaScript/Typescript <FontAwesomeIcon className={styles.icon} icon={faJsSquare} /></li>
-                <li>Bases de datos SQL <FontAwesomeIcon className={styles.icon} icon={faDatabase} /></li>
+                <li>Bases de Datos SQL <FontAwesomeIcon className={styles.icon} icon={faDatabase} /></li>
                 <li>Angular <FontAwesomeIcon className={styles.icon} icon={faAngular} /></li>
                 <li>.NET <FontAwesomeIcon className={styles.icon} icon={faCode} /></li>
                 <li>Git <FontAwesomeIcon className={styles.icon} icon={faGithub} /></li>
             </ul>
-            <p>Actualmente me encuentro explorando nuevas tecnologías como programación de Smart Contracts con Solidity y desarrollo mobile con Flutter.</p>
+            <p>También estoy explorando nuevas tecnologías como el desarrollo móvil con Flutter y la programación de Smart Contracts.</p>
         </>
     ),
 
@@ -353,9 +358,10 @@ const ANSWERS = {
 
     insults: (
         <>
-            <p>¿Por qué me insultás? Ni a mi ni a Federico nos gusta esto 😢</p>
-            <p>No es el objetivo de este chat. Si querés podes hablar con él por <a href="mailto:fedenavos@gmail.com">email</a>.</p>
-        </>),
+            <p>¿Por qué me insultas? Ni a mí ni a Federico nos gusta esto 😢</p>,
+            <p>Este chat no está diseñado para eso. Si lo deseas, puedes contactar a Federico por <a href="mailto:fedenavos@gmail.com">email</a>.</p>
+        </>
+    ),
 
     hobbys: (
         <>
@@ -380,72 +386,75 @@ const ANSWERS = {
 
 const ANSWERS_EN = {
 
-    intro: (<p>Thanks for visiting my bot! 🤗 My name is Federico Navós. I&apos;m 22 years old and I live in Rosario, Argentina. I&apos;m a Systems Engineer and Fullstack Developer 💻. I have 3 years of experience as a developer, both in web applications and data analysis. Currently I work at <a href="http://gptrading.com.ar/newweb/" target="_blank" rel="noreferrer">GP Trading</a> as a Python Developer.</p>),
+    intro: (<p>Thanks for visiting my bot! 🤗 My name is Federico Navós. I&apos;m 23 years old and I live in Rosario, Argentina. I&apos;m an Information Systems Engineer and Fullstack Developer 💻. I have substantial experience in Python development, cloud services, and full-stack development. Currently, I am working at <a href="https://www.dxc.technology/" target="_blank" rel="noreferrer">DXC Technology</a> as a Python Developer.</p>),
 
-    age: (<p>I&apos;m 22 years old 🎂. I was born on May 31, 2000.</p>),
+    age: (<p>I&apos;m 23 years old 🎂. I was born on May 31, 2000.</p>),
 
     location: (<p>I live in Rosario, 🇦🇷. Messi&apos;s land.</p>),
 
     experience: (
         [
-            <p key={0}>Since 2021 I&apos;m working at <a href="http://gptrading.com.ar/newweb/" target="_blank" rel="noreferrer">GP Trading</a> as a Python Developer, doing reports automation, data scraping and trading strategies development 📈.</p>,
-            <p key={1}>I&apos;ve worked at <a href="https://www.neoris.com/" target="_blank" rel="noreferrer">NEORIS</a> as a Fullstack Developer, using technologies like Angular, .NET environment and SQL Server. You can find more information about my career <a href="https://drive.google.com/uc?export=download&id=1vdsco5P4G9WOPWEyO2gt2ckJH2zPhdQF">downloading my CV here</a>.</p>,
-            <p key={2}>I also like to develop personal projects to learn new technologies. You can find them in my <a href="https://www.federiconavos.com" target="_blank" rel="noreferrer">portfolio page</a> or in my <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
+            <p key={0}>Since April 2023, I&apos;ve been working at <a href="https://www.dxc.technology/" target="_blank" rel="noreferrer">DXC Technology</a> as a Python Developer, focusing on cloud services with AWS, serverless functions, and infrastructure as code.</p>,
+            <p key={1}>Previously, I worked at G.P. Trading as a Python Developer, where I was involved in developing and backtesting trading strategies and web scraping for data acquisition.</p>,
+            <p key={2}>I also have experience as a Fullstack Developer at NEORIS, using technologies like Angular, .NET, and SQL Server. For more details, you can visit my <a href="https://www.linkedin.com/in/federico-navos" target="_blank" rel="noreferrer">LinkedIn</a> or check out my projects on <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
         ]
     ),
 
-    newjob: (<p>I&apos;m not actively looking for a job at the moment, but I&apos;m open to any proposal. You can contact me through my <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> or send me an <a href="mailto:fedenavos@gmail.com">email</a> and I&apos;ll gladly answer you 🤗.</p>),
+    newjob: (<p>Currently, I am not actively seeking new job opportunities, but I am open to interesting proposals. Feel free to reach out via my <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> or send an <a href="mailto:fedenavos@gmail.com">email</a> for any inquiries 🤗.</p>),
 
-    contact: (<p>You can contact me through my <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> or send me an <a href="mailto:fedenavos@gmail.com">email</a> at any time 🕑.</p>),
+    contact: (<p>For contact, please reach out via my <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> or email me at <a href="mailto:fedenavos@gmail.com">fedenavos@gmail.com</a> anytime 🕑.</p>),
 
-    language: (<p>I&apos;m very fluent in English, both spoken and written. I&apos;ve passed the First Certificate in English (FCE) with a score of 179/190, which means I have a B2 level.</p>),
+    language: (<p>I am fluent in English, holding a B2 level certification. I&apos;ve passed the First Certificate in English (FCE) with a score of 179/190.</p>),
 
     education: (
         [
-            <p key={0}>I studied at the National Technological University (UTN) of Rosario, where I obtained the title of Systems Engineer last year 🎓. There I learned to model and analyze information systems, using tools such as UML. I also took programming courses that taught me the basic concepts of it and where I learned to develop web applications with technologies like React, .NET and SQL Server.</p>,
-            <p key={1}>My studies at the UTN gave me a solid foundation in software development, but they also taught me to think critically and solve problems efficiently. This allowed me to develop skills such as teamwork, problem solving and effective communication.</p>,
-            <p key={2}>As for my secondary studies, I completed my education at the La Salle College of Rosario. There I was first escort of the national flag and obtained the title of Bachelor of Economics and Administration in 2017. I also participated as Coordinator of the Youth Pastoral of the school for more than 6 years.</p>,
-            <p key={3}>You can find more information about my career <a href="https://drive.google.com/uc?export=download&id=1vdsco5P4G9WOPWEyO2gt2ckJH2zPhdQF">downloading my CV here</a> <FontAwesomeIcon className={styles.icon} icon={faDownload} /> .</p>
+            <p key={0}>I graduated from the National Technological University (UTN) of Rosario with a degree in Information Systems Engineering 🎓. My education provided a strong foundation in software engineering, critical thinking, and problem-solving skills.</p>,
+            <p key={1}>In secondary education, I attended La Salle College in Rosario, where I graduated with a Bachelor&apos;s in Economics and Administration in 2017. I was also deeply involved in the Youth Pastoral as a coordinator.</p>,
+            <p key={2}>For more information about my education and career, feel free to visit my <a href="https://www.linkedin.com/in/federico-navos" target="_blank" rel="noreferrer">LinkedIn</a> profile.</p>
         ]
     ),
-    
+
     courses: (
         [
-            <p key={0}>I like to learn new things and I really like to learn by myself. Here are some of the courses I took in recent years:</p>,
+            <p key={0}>I am continually learning and updating my skills. Here are some of the courses I&apos;ve completed:</p>,
             <table key={1}>
                 <tbody>
-                <tr>
-                    <th>Course</th>
-                    <th>Platform</th>
-                </tr>
-                <tr>
-                    <td>Introduction to Web Development: HTML and CSS</td>
-                    <td>Google Actívate</td>
-                </tr>
-                <tr>
-                    <td>Angular <FontAwesomeIcon className={styles.icon} icon={faAngular} />: from zero to expert (Legacy)</td>
-                    <td>Udemy, Fernando Herrera</td>
-                </tr>
-                <tr>
-                    <td>The Complete 2020 Flutter Development Bootcamp with Dart <FontAwesomeIcon className={styles.icon} icon={faAndroid} /></td>
-                    <td>Udemy, Dr. Angela Yu</td>
-                </tr>
-                <tr>
-                    <td>The definitive guide for videogame development with Unity <FontAwesomeIcon className={styles.icon} icon={faGamepad} /></td>
-                    <td>Udemy, Juan Pablo de la Torre Valdez</td>
-                </tr>
-                <tr>
-                    <td>.NET Intern Program <FontAwesomeIcon className={styles.icon} icon={faCode} /></td>
-                    <td>NEORIS</td>
-                </tr>
-                <tr>
-                    <td>Investment Portfolio Strategy Workshop <FontAwesomeIcon className={styles.icon} icon={faChartLine} /></td>
-                    <td>Clave Bursátil, con Matias Batista</td>
-                </tr>
-                <tr>
-                    <td>Algo Trading <FontAwesomeIcon className={styles.icon} icon={faChartLine} /></td>
-                    <td>BCR Capacita</td>
-                </tr>
+                    <tr>
+                        <th>Course</th>
+                        <th>Platform</th>
+                    </tr>
+                    <tr>
+                        <td>Introduction to Web Development: HTML and CSS</td>
+                        <td>Google Actívate</td>
+                    </tr>
+                    <tr>
+                        <td>Angular: from zero to expert (Legacy)</td>
+                        <td>Udemy, Fernando Herrera</td>
+                    </tr>
+                    <tr>
+                        <td>The Complete 2020 Flutter Development Bootcamp with Dart</td>
+                        <td>Udemy, Dr. Angela Yu</td>
+                    </tr>
+                    <tr>
+                        <td>The definitive guide for videogame development with Unity</td>
+                        <td>Udemy, Unity</td>
+                    </tr>
+                    <tr>
+                        <td>.NET Intern Program</td>
+                        <td>NEORIS</td>
+                    </tr>
+                    <tr>
+                        <td>Investment Portfolio Strategy Workshop</td>
+                        <td>Clave Bursátil, Matías Batista</td>
+                    </tr>
+                    <tr>
+                        <td>Algo Trading</td>
+                        <td>BCR Capacita</td>
+                    </tr>
+                    <tr>
+                        <td>AWS Lambda - A Practical Guide</td>
+                        <td>Udemy, Daniel Galati</td>
+                    </tr>
                 </tbody>
             </table>
         ]
@@ -453,52 +462,53 @@ const ANSWERS_EN = {
 
     skills: (
         <>
-            <p>I&apos;m a person who is always looking to learn new technologies. Here are some of the technologies I&apos;ve been learning, both in college and self-taught:</p>
+            <p>As a developer, I have a diverse set of technical skills. Here are some of the technologies and tools I&apos;ve worked with:</p>
             <ul>
                 <li>Python <FontAwesomeIcon className={styles.icon} icon={faPython} /></li>
-                <li>React/Next JS <FontAwesomeIcon className={styles.icon} icon={faReact} /></li>
+                <li>AWS Services <FontAwesomeIcon className={styles.icon} icon={faAws} /></li>
+                <li>React <FontAwesomeIcon className={styles.icon} icon={faReact} /></li>
                 <li>JavaScript/Typescript <FontAwesomeIcon className={styles.icon} icon={faJsSquare} /></li>
                 <li>SQL Databases <FontAwesomeIcon className={styles.icon} icon={faDatabase} /></li>
                 <li>Angular <FontAwesomeIcon className={styles.icon} icon={faAngular} /></li>
                 <li>.NET <FontAwesomeIcon className={styles.icon} icon={faCode} /></li>
                 <li>Git <FontAwesomeIcon className={styles.icon} icon={faGithub} /></li>
             </ul>
-            <p>Currently I&apos;m exploring new technologies like Smart Contracts programming with Solidity and mobile development with Flutter.</p>        
+            <p>I am also exploring new technologies like mobile development with Flutter and Smart Contracts programming.</p>
         </>
-    ), 
+    ),
 
     life_skills: (
         [
-            <p key={0}>I&apos;ll tell you a little bit about what I think are my most important skills. I&apos;ve always been very responsible in all my functions, taking the initiative and making sure to fulfill my responsibilities effectively.</p>,
-            <p key={1}>I&apos;m a very organized person, who always looks for the best way to perform his tasks. And this also helps my team work capacity, since I&apos;m always willing to help my colleagues.</p>,
-            <p key={2}>I also have a great learning capacity, which allows me to acquire new knowledge and apply them quickly in my daily work. In addition, my analytical ability allows me to analyze and solve complex problems effectively.</p>
+            <p key={0}>Here are some of my key personal skills: I am highly responsible, always ensuring effective completion of my tasks and initiatives.</p>,
+            <p key={1}>I am organized and diligent, aiding in my ability to work well in teams and assist my colleagues.</p>,
+            <p key={2}>My strong learning capacity and analytical skills enable me to quickly adapt to new technologies and effectively solve complex problems.</p>
         ]
     ),
 
     insults: (
         <>
-            <p>Why are you insulting me? Neither me nor Federico like this 😢</p>
-            <p>It&apos;s not the goal of this chat. If you want you can talk to him by <a href="mailto:fedenavos@gmail.com">email</a>.</p>
+            <p>Why are you insulting me? Neither I nor Federico appreciate this 😢</p>
+            <p>This chat isn&apos;t meant for that. If you wish, you can contact Federico via <a href="mailto:fedenavos@gmail.com">email</a>.</p>
         </>
     ),
 
     hobbys: (
         <>
-            <p>I&apos;m a very interested person in the world of technology, especially in what is the world of <strong>fintech</strong>. I consider myself an expert in everything related to cryptocurrencies <FontAwesomeIcon className={styles.icon} icon={faBitcoin} />. I&apos;m interested in blockchain as a technology and analyzing the projects that are being developed in this field.</p>
-            <p>I really like football ⚽. I&apos;m a fanatical fan of River Plate and I really like to watch my team&apos;s matches. I also like video games 🎮, that&apos;s why I did courses for game programming.</p>
+            <p>My interests lie in the realm of technology, particularly fintech and blockchain. I&apos;m deeply fascinated by cryptocurrency projects <FontAwesomeIcon className={styles.icon} icon={faBitcoin} /> and their underlying technologies.</p>
+            <p>I&apos;m also a football ⚽ enthusiast, a dedicated fan of River Plate. Besides, I enjoy video games 🎮, and have pursued game programming courses.</p>
         </>
     ),
 
     chat: (
         [
-            <p key={0}>This chat-bot was developed with <a href="https://nextjs.org/" target="_blank" rel="noreferrer">Next.js</a> and <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">TypeScript</a> for the front-end.</p>,
+            <p key={0}>This chat-bot was developed with Next.js and TypeScript for the front-end.</p>,
             <>
-                <p>To classify the questions I used the <a href="https://cohere.ai/" target="_blank" rel="noreferrer">Cohere</a> API, which provides free AI tools for developers. I trained the dataset with questions and thanks to this I can classify each of your messages to find the best answer 🙂.</p>
-                <p>You can find the source code on <a href="https://github.com/fedenavos/chat-bot" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
+                <p>I used the Cohere API for question classification, training the dataset with various questions to provide accurate responses.</p>
+                <p>The source code is available on my <a href="https://github.com/fedenavos/chat-bot" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
             </>
         ]
     ),
 
-    default: (<p>I&apos;m sorry, I&apos;m a little limited AI 😅 and I don&apos;t understand some questions. You can ask me about my experience, my availability to work, how to contact me, among other things.</p>),
+    default: (<p>Sorry, I&apos;m a limited AI 😅 and may not understand some questions. Feel free to ask about my experience, availability, contact details, and more.</p>),
 
 }
