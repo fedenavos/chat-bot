@@ -14,7 +14,7 @@ Simply type a question about me in the chat and the bot will give you the best p
 
 ## How to use
 
-You can use the chat-bot by visiting the web page at https://federico-chat-bot.vercel.app/. Simply type your question in the chat box and hit "Send".
+You can use the chat-bot by visiting the web page at mibot.vercel.app. Simply type your question in the chat box and hit "Send".
 
 ## How to Install and Run the Bot
 
