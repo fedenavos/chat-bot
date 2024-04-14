@@ -260,7 +260,11 @@ export default Chat;
 
 const ANSWERS = {
 
-    intro: (<p>¡Gracias por visitar mi bot! 🤗 Soy Federico Navós. Tengo 23 años y vivo en Rosario, Argentina. Soy Ingeniero en Sistemas de Información y Desarrollador Fullstack 💻. Poseo una amplia experiencia en desarrollo con Python, servicios en la nube y desarrollo full-stack. Actualmente, trabajo en <a href="https://www.dxc.technology/" target="_blank" rel="noreferrer">DXC Technology</a> como Desarrollador Python.</p>),
+    intro: (
+        <p>
+            ¡Gracias por visitar mi bot! 🤗 Mi nombre es Federico Navós. Tengo 23 años y vivo en Rosario, Argentina. Soy Ingeniero en Sistemas de Información y Desarrollador Fullstack 💻. Tengo amplia experiencia en desarrollo en Python, servicios en la nube y tanto en front-end como en back-end. Actualmente trabajo en <a href="https://www.fiwind.io/" target="_blank" rel="noreferrer">Fiwind</a> como Desarrollador Python, donde me enfoco en automatizar estrategias de trading y mejorar la eficiencia operativa con integración de datos en tiempo real.
+        </p>
+    ),
 
     age: (<p>Tengo 23 años 🎂. Nací el 31 de mayo del 2000.</p>),
 
@@ -268,10 +272,17 @@ const ANSWERS = {
 
     experience: (
         [
-            <p key={0}>Desde abril de 2023, estoy trabajando en <a href="https://www.dxc.technology/" target="_blank" rel="noreferrer">DXC Technology</a> como Desarrollador Python, enfocándome en servicios en la nube con AWS, funciones serverless e infraestructura como código.</p>,
-            <p key={1}>Previamente, trabajé en G.P. Trading como Desarrollador Python, donde participé en el desarrollo y backtesting de estrategias de trading y en la adquisición de datos mediante web scraping.</p>,
-            <p key={2}>También tengo experiencia como Desarrollador Fullstack en NEORIS, usando tecnologías como Angular, .NET y SQL Server. Para más detalles, puedes visitar mi perfil en <a href="https://www.linkedin.com/in/federico-navos" target="_blank" rel="noreferrer">LinkedIn</a> o echar un vistazo a mis proyectos en <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
-        ]),
+            <p key={0}>
+                Desde marzo del 2024, trabajo en <a href="https://www.fiwind.io/" target="_blank" rel="noreferrer">Fiwind</a> como Desarrollador Python. Mi rol incluye el desarrollo de aplicaciones para estrategias de trading automatizadas, utilizando datos de mercado en tiempo real, con dashboards interactivos para monitoreo y análisis.
+            </p>,
+            <p key={1}>
+                Antes de Fiwind, estuve en <a href="https://www.dxc.technology/" target="_blank" rel="noreferrer">DXC Technology</a> enfocado en servicios en la nube de AWS, creando funciones serverless e infraestructura como código.
+            </p>,
+            <p key={2}>
+                Anteriormente, trabajé en G.P. Trading como Desarrollador Python, donde desarrollé y backtesteé estrategias de trading y realicé web scraping para adquisición de datos. También tengo experiencia como Desarrollador Fullstack en NEORIS, utilizando tecnologías como Angular, .NET y SQL Server. Para más detalles, puedes visitar mi <a href="https://www.linkedin.com/in/federico-navos" target="_blank" rel="noreferrer">LinkedIn</a> o ver mis proyectos en <a href="www.federiconavos.com" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.
+            </p>
+        ]
+    ),
 
     newjob: (<p>En este momento no estoy buscando activamente nuevas oportunidades laborales, pero estoy abierto a propuestas interesantes. Puedes contactarme a través de mi <a href="https://www.linkedin.com/in/federico-navos/" target="_blank" rel="noreferrer">LinkedIn</a> <FontAwesomeIcon className={styles.icon} icon={faLinkedin} /> o enviarme un <a href="mailto:fedenavos@gmail.com">email</a> y te responderé con gusto 🤗.</p>),
 
@@ -385,8 +396,11 @@ const ANSWERS = {
 
 
 const ANSWERS_EN = {
-
-    intro: (<p>Thanks for visiting my bot! 🤗 My name is Federico Navós. I&apos;m 23 years old and I live in Rosario, Argentina. I&apos;m an Information Systems Engineer and Fullstack Developer 💻. I have substantial experience in Python development, cloud services, and full-stack development. Currently, I am working at <a href="https://www.dxc.technology/" target="_blank" rel="noreferrer">DXC Technology</a> as a Python Developer.</p>),
+    intro: (
+        <p>
+            Thanks for visiting my bot! 🤗 My name is Federico Navós. I&apos;m 23 years old and I live in Rosario, Argentina. I&apos;m an Information Systems Engineer and Fullstack Developer 💻. I have extensive experience in Python development, cloud services, and both front-end and back-end development. I am currently working at <a href="https://www.fiwind.io/" target="_blank" rel="noreferrer">Fiwind</a> as a Python Developer, where I focus on automating trading strategies and improving operational efficiencies with real-time data integration.
+        </p>
+    ),
 
     age: (<p>I&apos;m 23 years old 🎂. I was born on May 31, 2000.</p>),
 
@@ -394,9 +408,15 @@ const ANSWERS_EN = {
 
     experience: (
         [
-            <p key={0}>Since April 2023, I&apos;ve been working at <a href="https://www.dxc.technology/" target="_blank" rel="noreferrer">DXC Technology</a> as a Python Developer, focusing on cloud services with AWS, serverless functions, and infrastructure as code.</p>,
-            <p key={1}>Previously, I worked at G.P. Trading as a Python Developer, where I was involved in developing and backtesting trading strategies and web scraping for data acquisition.</p>,
-            <p key={2}>I also have experience as a Fullstack Developer at NEORIS, using technologies like Angular, .NET, and SQL Server. For more details, you can visit my <a href="https://www.linkedin.com/in/federico-navos" target="_blank" rel="noreferrer">LinkedIn</a> or check out my projects on <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.</p>
+            <p key={0}>
+                Since March 2024, I&apos;ve been working at <a href="https://www.fiwind.io/" target="_blank" rel="noreferrer">Fiwind</a> as a Python Developer. My role includes developing applications for automated trading strategies, utilizing real-time market data, with interactive dashboards for monitoring and analysis.
+            </p>,
+            <p key={1}>
+                Before Fiwind, I was at <a href="https://www.dxc.technology/" target="_blank" rel="noreferrer">DXC Technology</a> focusing on AWS cloud services, creating serverless functions, and infrastructure as code.
+            </p>,
+            <p key={2}>
+                Previously, I worked at G.P. Trading as a Python Developer, where I developed and backtested trading strategies and performed web scraping for data acquisition. I also have experience as a Fullstack Developer at NEORIS, using technologies like Angular, .NET, and SQL Server. For more details, you can visit my <a href="https://www.linkedin.com/in/federico-navos" target="_blank" rel="noreferrer">LinkedIn</a> or check out my projects on <a href="https://github.com/fedenavos" target="_blank" rel="noreferrer">Github</a> <FontAwesomeIcon className={styles.icon} icon={faGithub} />.
+            </p>
         ]
     ),
 
